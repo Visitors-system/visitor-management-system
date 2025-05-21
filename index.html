@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النظام المتكامل لإدارة خدمات الزوار</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- إضافة خط مميز للعربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- إضافة مكتبة الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- شريط التنقل العلوي -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>نظام إدارة الزوار</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+                    <li><a href="pages/visitor-dashboard.html">لوحة الزائر</a></li>
+                    <li><a href="pages/employee-dashboard.html">لوحة الموظف</a></li>
+                    <li><a href="pages/manager-dashboard.html">لوحة المدير</a></li>
+                    <li><a href="#about">حول النظام</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline">تسجيل الدخول</button>
+                <button class="btn btn-primary">حجز موعد</button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>النظام المتكامل لإدارة خدمات الزوار</h2>
+                <p>نظام شامل مصمم لإدارة خدمات الزوار من خلال دمج الذكاء الاصطناعي مع تنسيق سير العمل عبر مختلف الأقسام</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">استعلام عن الطلب</button>
+                    <button class="btn btn-secondary">تتبع حالة الطلب</button>
+                </div>
+                <div class="queue-status">
+                    <div class="status-item">
+                        <h3>الوقت المتوقع للانتظار</h3>
+                        <p><span id="wait-time">15</span> دقيقة</p>
+                    </div>
+                    <div class="status-item">
+                        <h3>الرقم الحالي</h3>
+                        <p><span id="current-number">43</span></p>
+                    </div>
+                    <div class="status-item">
+                        <h3>عدد الزوار في الانتظار</h3>
+                        <p><span id="waiting-count">12</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/hero-image.svg" alt="نظام إدارة الزوار" class="placeholder-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- مميزات النظام -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>المكونات الرئيسية للنظام</h2>
+                <p>نظام متكامل يشمل جميع مراحل خدمة الزوار بكفاءة عالية</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>استقبال وإدارة الزوار</h3>
+                    <p>نظام طابور ذكي، وإصدار أرقام الانتظار إلكترونيًا، وعرض حالة الانتظار على شاشات الاستقبال</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>نظام التعريف والربط</h3>
+                    <p>رقم تعريف فريد لكل موظف، وربط الهوية بمستوى الصلاحيات، وتتبع المسؤولية</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>نظام التتبع والإدارة</h3>
+                    <p>تعيين رقم تتبع لكل طلب، وواجهة رقمية للزوار لمتابعة حالة طلباتهم، وإشعارات آلية</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>لوحات المعلومات والمراقبة</h3>
+                    <p>لوحات معلومات للزوار والموظفين ورؤساء الأقسام والإدارة العليا</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>تكامل سير العمل والتقييم</h3>
+                    <p>خريطة سير عمل ذكية، وتحليل الأداء بناءً على مساهمة كل موظف</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>المساءلة والشفافية</h3>
+                    <p>ربط كل إجراء بالموظف المسؤول، وتسجيل وقت كل خطوة من خطوات المعالجة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوائد النظام -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>فوائد النظام</h2>
+                <p>تحسين تجربة الزوار وزيادة كفاءة الموظفين وتعزيز الشفافية</p>
+            </div>
+            <div class="benefits-tabs">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-target="visitors">للزوار</button>
+                    <button class="tab-btn" data-target="employees">للموظفين</button>
+                    <button class="tab-btn" data-target="managers">للمديرين</button>
+                    <button class="tab-btn" data-target="institution">للمؤسسة</button>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-content active" id="visitors">
+                        <div class="benefit-list">
+                            <div class="benefit-item">
+                                <i class="fas fa-clock"></i>
+                                <p>تقليل وقت الانتظار وتسريع الخدمة</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-search"></i>
+                                <p>شفافية كاملة في تتبع الطلبات</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-comments"></i>
+                                <p>تواصل مباشر مع الموظفين المعنيين</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-bell"></i>
+                                <p>تحديثات في الوقت الفعلي</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-star"></i>
+                                <p>القدرة على تقييم خدمة الموظفين بشكل فردي</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="employees">
+                        <div class="benefit-list">
+                            <div class="benefit-item">
+                                <i class="fas fa-robot"></i>
+                                <p>مساعدة الذكاء الاصطناعي لتلخيص وتصنيف الطلبات</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-comment-dots"></i>
+                                <p>سهولة التواصل مع الأقسام ذات الصلة</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-tools"></i>
+                                <p>أدوات لتعزيز الأداء والإنتاجية</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-chart-bar"></i>
+                                <p>الوصول إلى تقييمات الزوار وملاحظات الأداء</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="managers">
+                        <div class="benefit-list">
+                            <div class="benefit-item">
+                                <i class="fas fa-eye"></i>
+                                <p>رؤية كاملة لسير العمل وأداء الموظفين</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <p>تحديد نقاط القوة والضعف في نظام الخدمة</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-chart-pie"></i>
+                                <p>اتخاذ قرارات مستنيرة بناءً على بيانات دقيقة</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-smile"></i>
+                                <p>قياس رضا الزوار وتحسين جودة الخدمة</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-users-cog"></i>
+                                <p>تقييم وتعزيز التعاون بين الإدارات</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="institution">
+                        <div class="benefit-list">
+                            <div class="benefit-item">
+                                <i class="fas fa-cogs"></i>
+                                <p>تحسين كفاءة استخدام الموارد البشرية</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <p>تقليل تكاليف الخدمة وزيادة الإنتاجية</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-building"></i>
+                                <p>تعزيز صورة المؤسسة ورضا الزوار</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-database"></i>
+                                <p>بناء قاعدة بيانات غنية لتطوير الخدمة في المستقبل</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-handshake"></i>
+                                <p>تعزيز التعاون بين الإدارات</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- طريقة عمل النظام -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>كيف يعمل النظام؟</h2>
+                <p>التكامل بين مختلف العناصر لضمان تجربة سلسة</p>
+            </div>
+            <div class="workflow">
+                <div class="workflow-item">
+                    <div class="workflow-number">1</div>
+                    <div class="workflow-content">
+                        <h3>استقبال الزائر</h3>
+                        <p>يحصل الزائر على رقم طابور إلكتروني عبر كشك المدخل أو تطبيق الهاتف المحمول</p>
+                    </div>
+                </div>
+                <div class="workflow-item">
+                    <div class="workflow-number">2</div>
+                    <div class="workflow-content">
+                        <h3>معالجة الطلب</h3>
+                        <p>تسجيل معلومات الزائر وربطها برقم الطابور الخاص به، واستخدام الذكاء الاصطناعي لتدوين التفاعل المنطوق إلى نص</p>
+                    </div>
+                </div>
+                <div class="workflow-item">
+                    <div class="workflow-number">3</div>
+                    <div class="workflow-content">
+                        <h3>التوجيه للقسم المختص</h3>
+                        <p>إشراك الموظفين المعنيين من مختلف الإدارات في الطلب، ومشاركة المعلومات والوثائق مع الإدارات ذات الصلة</p>
+                    </div>
+                </div>
+                <div class="workflow-item">
+                    <div class="workflow-number">4</div>
+                    <div class="workflow-content">
+                        <h3>تتبع الطلب</h3>
+                        <p>متابعة تدفق الطلب بين الإدارات مع معرفات الموظفين المرتبطة، وإرسال تنبيهات في الوقت الفعلي للإدارات التي تحتاج إلى التصرف</p>
+                    </div>
+                </div>
+                <div class="workflow-item">
+                    <div class="workflow-number">5</div>
+                    <div class="workflow-content">
+                        <h3>الإنجاز والتقييم</h3>
+                        <p>تقييم فردي لكل موظف تعامل مع الطلب، وإضافة تعليقات أو ملاحظات على الخدمة المقدمة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- عن النظام -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>حول النظام المتكامل لإدارة خدمات الزوار</h2>
+                    <p>نظام متكامل يجمع بين الذكاء الاصطناعي وتنسيق سير العمل بين مختلف الإدارات، مما يضمن تجربة سلسة للزوار، وتعزيز كفاءة الموظفين، والتتبع الدقيق، والتقييم من خلال نظام تعريف محدد بوضوح يربط كل طلب بالمسؤول عن معالجته.</p>
+                    <p>سيحقق هذا النظام المتكامل تحولاً نوعياً في إدارة خدمات الزوار، وسيعزز التنسيق والمساءلة بين الإدارات، ويحسن جودة الخدمة، ويرفع مستوى تجربة الزائر بشكل عام.</p>
+                    <div class="tech-stack">
+                        <h3>متطلبات تنفيذ النظام:</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">
+                                <i class="fas fa-server"></i>
+                                <span>خوادم وقواعد بيانات متقدمة</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-network-wired"></i>
+                                <span>شبكة داخلية سريعة وآمنة</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-desktop"></i>
+                                <span>أجهزة استقبال وعرض في مناطق الانتظار</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-globe"></i>
+                                <span>منصة عبر الإنترنت</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-brain"></i>
+                                <span>تقنيات الذكاء الاصطناعي</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/about-image.svg" alt="نظام إدارة الزوار" class="placeholder-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>نظام إدارة الزوار</h2>
+                    <p>نظام متكامل لإدارة خدمات الزوار</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>روابط سريعة</h3>
+                        <ul>
+                            <li><a href="#features">المميزات</a></li>
+                            <li><a href="#benefits">الفوائد</a></li>
+                            <li><a href="#how-it-works">كيف يعمل</a></li>
+                            <li><a href="#about">حول النظام</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>لوحات التحكم</h3>
+                        <ul>
+                            <li><a href="pages/visitor-dashboard.html">لوحة الزائر</a></li>
+                            <li><a href="pages/employee-dashboard.html">لوحة الموظف</a></li>
+                            <li><a href="pages/manager-dashboard.html">لوحة المدير</a></li>
+                            <li><a href="pages/admin-dashboard.html">لوحة الإدارة العليا</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>اتصل بنا</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-envelope"></i> info@visitor-system.com</li>
+                            <li><i class="fas fa-phone"></i> +966 50 123 4567</li>
+                            <li><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2025 - النظام المتكامل لإدارة خدمات الزوار</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- نافذة استعلام الطلب -->
+    <div class="modal" id="inquiry-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>استعلام عن طلب</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="inquiry-form">
+                    <div class="form-group">
+                        <label for="request-number">رقم الطلب</label>
+                        <input type="text" id="request-number" name="request-number" placeholder="أدخل رقم الطلب" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone-number">رقم الهاتف</label>
+                        <input type="tel" id="phone-number" name="phone-number" placeholder="أدخل رقم الهاتف المسجل" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">استعلام</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- جافا سكريبت -->
+    <script src="js/main.js"></script>
+    <script src="js/queue.js"></script>
+</body>
+</html>

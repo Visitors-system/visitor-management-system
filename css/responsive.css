@@ -1,0 +1,227 @@
+/* أنماط الشاشات المتجاوبة */
+
+/* شاشات متوسطة - الأجهزة اللوحية */
+@media screen and (max-width: 992px) {
+    .main-header .container {
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        margin-left: auto;
+    }
+
+    .auth-buttons {
+        order: 3;
+        margin-right: auto;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        order: 4;
+        margin-right: 1rem;
+    }
+
+    .main-nav {
+        flex: 0 0 100%;
+        order: 5;
+        height: 0;
+        overflow: hidden;
+        transition: var(--transition);
+        margin-top: 1rem;
+    }
+
+    .main-nav.active {
+        height: auto;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    .hero .container {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        order: 2;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        order: 1;
+        margin-bottom: 2rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text {
+        order: 2;
+    }
+
+    .about-image {
+        order: 1;
+        margin-bottom: 2rem;
+    }
+
+    .benefits-tabs .tabs-nav {
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-logo {
+        margin-bottom: 1rem;
+    }
+}
+
+/* شاشات صغيرة - الهواتف المحمولة */
+@media screen and (max-width: 768px) {
+    .main-header {
+        padding: 0.5rem 0;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .queue-status {
+        flex-direction: column;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .features-grid, .benefit-list {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-item {
+        flex-direction: column;
+        gap: 1rem;
+        padding-right: 30px;
+    }
+
+    .workflow-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .workflow-item:not(:last-child)::after {
+        right: 25px;
+    }
+
+    .tech-items {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+
+    .footer-column {
+        margin-bottom: 1rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-links {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+}
+
+/* شاشات متوسطة الصغر */
+@media screen and (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .auth-buttons {
+        display: none;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+
+    .tabs-nav {
+        gap: 0.5rem;
+    }
+
+    .tab-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}
+
+/* للشاشات شديدة الصغر */
+@media screen and (max-width: 350px) {
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .status-item {
+        padding: 0.8rem;
+    }
+
+    .status-item h3 {
+        font-size: 0.8rem;
+    }
+
+    .status-item p {
+        font-size: 1.2rem;
+    }
+}

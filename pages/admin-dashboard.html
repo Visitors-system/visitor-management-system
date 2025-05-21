@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الإدارة العليا - نظام إدارة الزوار</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- إضافة خط مميز للعربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- إضافة مكتبة الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- شريط التنقل العلوي -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo">
+                <h1>نظام إدارة الزوار</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">الرئيسية</a></li>
+                    <li><a href="visitor-dashboard.html">لوحة الزائر</a></li>
+                    <li><a href="employee-dashboard.html">لوحة الموظف</a></li>
+                    <li><a href="manager-dashboard.html">لوحة المدير</a></li>
+                    <li><a href="admin-dashboard.html" class="active">لوحة الإدارة العليا</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <div class="user-info">
+                    <span>أحمد محمد</span>
+                    <img src="../assets/images/user-avatar.svg" alt="صورة المدير العام" class="avatar">
+                </div>
+                <div class="user-dropdown">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-user"></i> الملف الشخصي</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> الإعدادات</a></li>
+                        <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوى لوحة التحكم -->
+    <div class="dashboard-container">
+        <!-- الشريط الجانبي -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-user">
+                <img src="../assets/images/user-avatar.svg" alt="صورة المدير العام" class="avatar">
+                <h3>أحمد محمد</h3>
+                <p>المدير العام</p>
+                <p>معرف الموظف: A-1001</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard-overview"><i class="fas fa-tachometer-alt"></i> نظرة عامة</a>
+                    </li>
+                    <li>
+                        <a href="#organization-performance"><i class="fas fa-chart-line"></i> أداء المؤسسة</a>
+                    </li>
+                    <li>
+                        <a href="#departments-monitoring"><i class="fas fa-sitemap"></i> متابعة الأقسام</a>
+                    </li>
+                    <li>
+                        <a href="#visitors-analytics"><i class="fas fa-users"></i> تحليلات الزوار</a>
+                    </li>
+                    <li>
+                        <a href="#strategic-planning"><i class="fas fa-chess"></i> التخطيط الاستراتيجي</a>
+                    </li>
+                    <li>
+                        <a href="#executive-reports"><i class="fas fa-file-alt"></i> التقارير التنفيذية</a>
+                    </li>
+                    <li>
+                        <a href="#system-configuration"><i class="fas fa-cogs"></i> إعدادات النظام</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#help"><i class="fas fa-question-circle"></i> مساعدة</a>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+            </div>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="dashboard-content">
+            <!-- نظرة عامة -->
+            <section id="dashboard-overview" class="dashboard-section active">
+                <div class="section-header-with-actions">
+                    <div>
+                        <h2 class="section-title">مرحبًا، أحمد محمد</h2>
+                        <p class="section-description">نظرة عامة على أداء المؤسسة والمؤشرات الرئيسية</p>
+                    </div>
+                    <div class="date-time-display">
+                        <div class="current-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>الأربعاء، 21 مايو 2025</span>
+                        </div>
+                        <div class="current-time">
+                            <i class="fas fa-clock"></i>
+                            <span id="current-time">10:25:30</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="executive-summary">
+                    <div class="summary-heading">
+                        <h3>الملخص التنفيذي</h3>
+                        <div class="date-range">
+                            <i class="fas fa-calendar"></i>
+                            <span>1 مايو - 21 مايو 2025</span>
+                        </div>
+                    </div>
+                    <div class="summary-cards">
+                        <div class="summary-card">
+                            <div class="card-header">
+                                <div class="card-title">إجمالي الطلبات</div>
+                                <div class="card-icon">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                            </div>
+                            <div class="card-value">142</div>
+                            <div class="card-chart">
+                                <div class="mini-chart up"></div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>12%</span>
+                                </span>
+                                <span class="period">من الشهر الماضي</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-header">
+                                <div class="card-title">إجمالي الزوار</div>
+                                <div class="card-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                            </div>
+                            <div class="card-value">98</div>
+                            <div class="card-chart">
+                                <div class="mini-chart up"></div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>8%</span>
+                                </span>
+                                <span class="period">من الشهر الماضي</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-header">
+                                <div class="card-title">معدل الإنجاز</div>
+                                <div class="card-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="card-value">87%</div>
+                            <div class="card-chart">
+                                <div class="mini-chart up"></div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>3%</span>
+                                </span>
+                                <span class="period">من الشهر الماضي</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-header">
+                                <div class="card-title">متوسط الرضا</div>
+                                <div class="card-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="card-value">4.5<span class="small-text">/5</span></div>
+                            <div class="card-chart">
+                                <div class="mini-chart stable"></div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="trend neutral">
+                                    <i class="fas fa-equals"></i>
+                                    <span>0.1</span>
+                                </span>
+                                <span class="period">من الشهر الماضي</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kpi-summary">
+                    <div class="kpi-header">
+                        <h3>مؤشرات الأداء الرئيسية</h3>
+                        <div class="kpi-period-selector">
+                            <button class="period-btn active">يومي</button>
+                            <button class="period-btn">أسبوعي</button>
+                            <button class="period-btn">شهري</button>
+                            <button class="period-btn">ربع سنوي</button>
+                        </div>
+                    </div>
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-title">متوسط وقت الانتظار</div>
+                            <div class="kpi-value">15 دقيقة</div>
+                            <div class="kpi-chart">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar">
+                                        <div class="progress success" style="width: 40%;"></div>
+                                    </div>
+                                    <div class="targets">
+                                        <span class="target-label">الهدف: 20 دقيقة</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-title">متوسط وقت الإنجاز</div>
+                            <div class="kpi-value">115 دقيقة</div>
+                            <div class="kpi-chart">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar">
+                                        <div class="progress warning" style="width: 70%;"></div>
+                                    </div>
+                                    <div class="targets">
+                                        <span class="target-label">الهدف: 100 دقيقة</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-title">نسبة معالجة الشكاوى</div>
+                            <div class="kpi-value">92%</div>
+                            <div class="kpi-chart">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar">
+                                        <div class="progress success" style="width: 92%;"></div>
+                                    </div>
+                                    <div class="targets">
+                                        <span class="target-label">الهدف: 90%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-title">نسبة الطلبات المتأخرة</div>
+                            <div class="kpi-value">8%</div>
+                            <div class="kpi-chart">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar reverse">
+                                        <div class="progress success" style="width: 92%;"></div>
+                                    </div>
+                                    <div class="targets">
+                                        <span class="target-label">الهدف: أقل من 10%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="departments-overview">
+                    <div class="section-header">
+                        <h3>أداء الأقسام</h3>
+                        <a href="#departments-monitoring" class="btn btn-sm btn-outline">عرض التفاصيل</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>القسم</th>
+                                    <th>عدد الطلبات</th>
+                                    <th>معدل الإنجاز</th>
+                                    <th>رضا الزوار</th>
+                                    <th>متوسط وقت الاستجابة</th>
+                                    <th>الأداء العام</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>القسم</th>
+                                    <th>عدد الطلبات</th>
+                                    <th>معدل الإنجاز</th>
+                                    <th>رضا الزوار</th>
+                                    <th>متوسط وقت الاستجابة</th>
+                                    <th>الأداء العام</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>خدمة العملاء</td>
+                                    <td>65</td>
+                                    <td>
+                                        <div class="progress-bar small">
+                                            <div class="progress success" style="width: 92%;"></div>
+                                            <span>92%</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                            <span>4.6</span>
+                                        </div>
+                                    </td>
+                                    <td>37 دقيقة</td>
+                                    <td>
+                                        <div class="performance-indicator excellent">
+                                            <i class="fas fa-circle"></i>
+                                            <span>ممتاز</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>الدعم الفني</td>
+                                    <td>45</td>
+                                    <td>
+                                        <div class="progress-bar small">
+                                            <div class="progress good" style="width: 85%;"></div>
+                                            <span>85%</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                            <span>4.4</span>
+                                        </div>
+                                    </td>
+                                    <td>43 دقيقة</td>
+                                    <td>
+                                        <div class="performance-indicator good">
+                                            <i class="fas fa-circle"></i>
+                                            <span>جيد جداً</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>قسم الشكاوى</td>
+                                    <td>25</td>
+                                    <td>
+                                        <div class="progress-bar small">
+                                            <div class="progress average" style="width: 80%;"></div>
+                                            <span>80%</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                            <span>4.1</span>
+                                        </div>
+                                    </td>
+                                    <td>52 دقيقة</td>
+                                    <td>
+                                        <div class="performance-indicator average">
+                                            <i class="fas fa-circle"></i>
+                                            <span>جيد</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>قسم المقترحات</td>
+                                    <td>7</td>
+                                    <td>
+                                        <div class="progress-bar small">
+                                            <div class="progress success" style="width: 100%;"></div>
+                                            <span>100%</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span>4.9</span>
+                                        </div>
+                                    </td>
+                                    <td>30 دقيقة</td>
+                                    <td>
+                                        <div class="performance-indicator excellent">
+                                            <i class="fas fa-circle"></i>
+                                            <span>ممتاز</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="charts-overview">
+                    <div class="charts-row">
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>توزيع الطلبات الشهرية</h3>
+                                <div class="chart-actions">
+                                    <button class="btn btn-sm btn-outline"><i class="fas fa-download"></i></button>
+                                    <button class="btn btn-sm btn-outline"><i class="fas fa-expand"></i></button>
+                                </div>
+                            </div>
+                            <div class="chart-content">
+                                <canvas id="monthly-requests-chart" width="600" height="300"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>متوسط رضا الزوار الشهري</h3>
+                                <div class="chart-actions">
+                                    <button class="btn btn-sm btn-outline"><i class="fas fa-download"></i></button>
+                                    <button class="btn btn-sm btn-outline"><i class="fas fa-expand"></i></button>
+                                </div>
+                            </div>
+                            <div class="chart-content">
+                                <canvas id="satisfaction-chart" width="600" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-insights">
+                    <div class="insight-card">
+                        <div class="insight-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="insight-content">
+                            <h3>اتجاهات ملحوظة</h3>
+                            <p>زيادة بنسبة 15% في الطلبات المتعلقة بتحديث البيانات خلال الأسبوعين الماضيين، مما يشير إلى الحاجة إلى تبسيط عملية تحديث البيانات.</p>
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="insight-content">
+                            <h3>تنبيه</h3>
+                            <p>ارتفاع في متوسط وقت الاستجابة في قسم الشكاوى بنسبة 12% عن الشهر الماضي. يُوصى بمراجعة عمليات القسم وتخصيص موارد إضافية.</p>
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon success">
+                            <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <div class="insight-content">
+                            <h3>تحسينات</h3>
+                            <p>تحسن ملحوظ في رضا الزوار عن خدمة العملاء بعد تنفيذ نظام الرد الفوري، مع زيادة في تقييمات الرضا بنسبة 0.4 نقطة.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- أداء المؤسسة -->
+            <section id="organization-performance" class="dashboard-section">
+                <h2 class="section-title">أداء المؤسسة</h2>
+                <p class="section-description">تحليل شامل لأداء المؤسسة ومؤشرات الأداء الرئيسية</p>
+
+                <div class="filter-controls">
+                    <div class="form-group">
+                        <label>الفترة الزمنية</label>
+                        <select class="filter-select">
+                            <option value="current-month">الشهر الحالي</option>
+                            <option value="previous-month">الشهر الماضي</option>
+                            <option value="last-3-months" selected>آخر 3 أشهر</option>
+                            <option value="last-6-months">آخر 6 أشهر</option>
+                            <option value="year-to-date">من بداية العام</option>
+                            <option value="custom">فترة مخصصة</option>
+                        </select>
+                    </div>
+                    <div class="form-group date-inputs" style="display: none;">
+                        <input type="date" class="date-input" placeholder="من تاريخ">
+                        <input type="date" class="date-input" placeholder="إلى تاريخ">
+                    </div>
+                    <div class="form-group">
+                        <label>المقارنة مع</label>
+                        <select class="filter-select">
+                            <option value="previous-period" selected>الفترة السابقة</option>
+                            <option value="same-period-last-year">نفس الفترة من العام الماضي</option>
+                            <option value="targets">الأهداف</option>
+                            <option value="none">بدون مقارنة</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn btn-primary">تطبيق</button>
+                        <button class="btn btn-outline">إعادة تعيين</button>
+                    </div>
+                </div>
+
+                <div class="performance-metrics-grid">
+                    <div class="metric-container wide">
+                        <div class="metric-header">
+                            <h3>إجمالي الطلبات الشهرية</h3>
+                            <div class="period-selector">
+                                <button class="period-btn active">6 أشهر</button>
+                                <button class="period-btn">12 شهر</button>
+                            </div>
+                        </div>
+                        <div class="metric-chart">
+                            <canvas id="monthly-requests-trend-chart" width="800" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="metric-container">
+                        <div class="metric-header">
+                            <h3>توزيع الطلبات حسب النوع</h3>
+                        </div>
+                        <div class="metric-chart">
+                            <div class="doughnut-chart-container">
+                                <canvas id="requests-type-chart" width="250" height="250"></canvas>
+                                <div class="chart-center-text">
+                                    <div class="total-value">142</div>
+                                    <div class="total-label">إجمالي الطلبات</div>
+                                </div>
+                            </div>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="color-box" style="background-color: #2563eb;"></span>
+                                    <span class="legend-text">طلب خدمة</span>
+                                    <span class="legend-value">58 (41%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="color-box" style="background-color: #10b981;"></span>
+                                    <span class="legend-text">استفسار</span>
+                                    <span class="legend-value">42 (30%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="color-box" style="background-color: #f59e0b;"></span>
+                                    <span class="legend-text">شكوى</span>
+                                    <span class="legend-value">35 (25%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="color-box" style="background-color: #7c3aed;"></span>
+                                    <span class="legend-text">اقتراح</span>
+                                    <span class="legend-value">7 (4%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-container">
+                        <div class="metric-header">
+                            <h3>متوسط مؤشرات الأداء</h3>
+                        </div>
+                        <div class="metric-chart">
+                            <div class="radar-chart-container">
+                                <canvas id="performance-radar-chart" width="300" height="300"></canvas>
+                            </div>
+                            <div class="metric-notes">
+                                <p>المؤشرات تمثل النسبة المئوية من الهدف المحدد لكل مقياس أداء</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-container">
+                        <div class="metric-header">
+                            <h3>اتجاهات رضا الزوار</h3>
+                        </div>
+                        <div class="metric-chart">
+                            <canvas id="satisfaction-trend-chart" width="380" height="250"></canvas>
+                        </div>
+                    </div>
+                    <div class="metric-container">
+                        <div class="metric-header">
+                            <h3>توزيع أوقات الإنجاز</h3>
+                        </div>
+                        <div class="metric-chart">
+                            <canvas id="completion-time-chart" width="380" height="250"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="performance-analysis">
+                    <div class="section-header">
+                        <h3>تحليل الأداء</h3>
+                    </div>
+                    <div class="analysis-content">
+                        <div class="analysis-card">
+                            <div class="analysis-header positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <h4>نقاط القوة</h4>
+                            </div>
+                            <div class="analysis-body">
+                                <ul class="analysis-list">
+                                    <li>ارتفاع معدل رضا الزوار بنسبة 8% مقارنة بالربع السابق.</li>
+                                    <li>انخفاض متوسط وقت الانتظار بمقدار 5 دقائق عن الفترة السابقة.</li>
+                                    <li>تحسن في معدل الإنجاز في قسم خدمة العملاء وقسم المقترحات.</li>
+                                    <li>زيادة كفاءة معالجة الاستفسارات بنسبة 12%.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="analysis-card">
+                            <div class="analysis-header negative">
+                                <i class="fas fa-arrow-down"></i>
+                                <h4>فرص التحسين</h4>
+                            </div>
+                            <div class="analysis-body">
+                                <ul class="analysis-list">
+                                    <li>ارتفاع في متوسط وقت الاستجابة في قسم الشكاوى بنسبة 12%.</li>
+                                    <li>انخفاض معدل الإنجاز في قسم الشكاوى إلى 80%، وهو أقل من المستهدف (90%).</li>
+                                    <li>زيادة في عدد الطلبات المتأخرة في الأسابيع الأخيرة.</li>
+                                    <li>الحاجة إلى تحسين عملية تبادل المعلومات بين الأقسام.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="analysis-card">
+                            <div class="analysis-header recommendations">
+                                <i class="fas fa-lightbulb"></i>
+                                <h4>التوصيات</h4>
+                            </div>
+                            <div class="analysis-body">
+                                <ul class="analysis-list">
+                                    <li>تخصيص موارد إضافية لقسم الشكاوى لتحسين أوقات الاستجابة.</li>
+                                    <li>تنفيذ ورش عمل لتحسين التواصل بين الأقسام.</li>
+                                    <li>تطوير آلية للإنذار المبكر للطلبات التي قد تتأخر.</li>
+                                    <li>مراجعة وتحسين عملية تحديث البيانات لتلبية الزيادة في الطلبات.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- متابعة الأقسام -->
+            <section id="departments-monitoring" class="dashboard-section">
+                <h2 class="section-title">متابعة الأقسام</h2>
+                <p class="section-description">مراقبة وتحليل أداء الأقسام المختلفة</p>
+
+                <div class="departments-grid">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="department-info">
+                                <h3>خدمة العملاء</h3>
+                                <p>رئيس القسم: فهد محمد</p>
+                            </div>
+                            <div class="department-performance excellent">
+                                <i class="fas fa-circle"></i>
+                                <span>ممتاز</span>
+                            </div>
+                        </div>
+                        <div class="department-metrics">
+                            <div class="metric">
+                                <span class="metric-value">65</span>
+                                <span class="metric-label">إجمالي الطلبات</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">92%</span>
+                                <span class="metric-label">معدل الإنجاز</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">4.6</span>
+                                <span class="metric-label">رضا الزوار</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">37</span>
+                                <span class="metric-label">وقت الاستجابة (د)</span>
+                            </div>
+                        </div>
+                        <div class="department-chart">
+                            <div class="mini-line-chart">
+                                <div class="chart-line success"></div>
+                            </div>
+                        </div>
+                        <div class="department-actions">
+                            <button class="btn btn-sm btn-outline">عرض التفاصيل</button>
+                            <button class="btn btn-sm btn-primary">التقرير الكامل</button>
+                        </div>
+                    </div>
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="department-info">
+                                <h3>الدعم الفني</h3>
+                                <p>رئيس القسم: عبدالرحمن خالد</p>
+                            </div>
+                            <div class="department-performance good">
+                                <i class="fas fa-circle"></i>
+                                <span>جيد جداً</span>
+                            </div>
+                        </div>
+                        <div class="department-metrics">
+                            <div class="metric">
+                                <span class="metric-value">45</span>
+                                <span class="metric-label">إجمالي الطلبات</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">85%</span>
+                                <span class="metric-label">معدل الإنجاز</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">4.4</span>
+                                <span class="metric-label">رضا الزوار</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">43</span>
+                                <span class="metric-label">وقت الاستجابة (د)</span>
+                            </div>
+                        </div>
+                        <div class="department-chart">
+                            <div class="mini-line-chart">
+                                <div class="chart-line neutral"></div>
+                            </div>
+                        </div>
+                        <div class="department-actions">
+                            <button class="btn btn-sm btn-outline">عرض التفاصيل</button>
+                            <button class="btn btn-sm btn-primary">التقرير الكامل</button>
+                        </div>
+                    </div>
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="department-info">
+                                <h3>قسم الشكاوى</h3>
+                                <p>رئيس القسم: سارة علي</p>
+                            </div>
+                            <div class="department-performance average">
+                                <i class="fas fa-circle"></i>
+                                <span>جيد</span>
+                            </div>
+                        </div>
+                        <div class="department-metrics">
+                            <div class="metric">
+                                <span class="metric-value">25</span>
+                                <span class="metric-label">إجمالي الطلبات</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">80%</span>
+                                <span class="metric-label">معدل الإنجاز</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">4.1</span>
+                                <span class="metric-label">رضا الزوار</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">52</span>
+                                <span class="metric-label">وقت الاستجابة (د)</span>
+                            </div>
+                        </div>
+                        <div class="department-chart">
+                            <div class="mini-line-chart">
+                                <div class="chart-line warning"></div>
+                            </div>
+                        </div>
+                        <div class="department-actions">
+                            <button class="btn btn-sm btn-outline">عرض التفاصيل</button>
+                            <button class="btn btn-sm btn-primary">التقرير الكامل</button>
+                        </div>
+                    </div>
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="department-info">
+                                <h3>قسم المقترحات</h3>
+                                <p>رئيس القسم: محمد نايف</p>
+                            </div>
+                            <div class="department-performance excellent">
+                                <i class="fas fa-circle"></i>
+                                <span>ممتاز</span>
+                            </div>
+                        </div>
+                        <div class="department-metrics">
+                            <div class="metric">
+                                <span class="metric-value">7</span>
+                                <span class="metric-label">إجمالي الطلبات</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">100%</span>
+                                <span class="metric-label">معدل الإنجاز</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">4.9</span>
+                                <span class="metric-label">رضا الزوار</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">30</span>
+                                <span class="metric-label">وقت الاستجابة (د)</span>
+                            </div>
+                        </div>
+                        <div class="department-chart">
+                            <div class="mini-line-chart">
+                                <div class="chart-line success"></div>
+                            </div>
+                        </div>
+                        <div class="department-actions">
+                            <button class="btn btn-sm btn-outline">عرض التفاصيل</button>
+                            <button class="btn btn-sm btn-primary">التقرير الكامل</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interdepartmental-analysis">
+                    <div class="section-header">
+                        <h3>تحليل التعاون بين الأقسام</h3>
+                    </div>
+                    <div class="interdepartmental-chart">
+                        <div class="chart-placeholder">
+                            <p>مخطط التعاون بين الأقسام يظهر هنا</p>
+                        </div>
+                    </div>
+                    <div class="analysis-insights">
+                        <div class="insight">
+                            <div class="insight-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="insight-text">
+                                <h4>تحويل الطلبات</h4>
+                                <p>معدل تحويل الطلبات بين الأقسام: 18%. معظم التحويلات من خدمة العملاء إلى الدعم الفني (35%).</p>
+                            </div>
+                        </div>
+                        <div class="insight">
+                            <div class="insight-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="insight-text">
+                                <h4>زمن التحويل</h4>
+                                <p>متوسط وقت تحويل الطلب: 15 دقيقة. أسرع الأقسام استجابة: قسم المقترحات (8 دقائق).</p>
+                            </div>
+                        </div>
+                        <div class="insight">
+                            <div class="insight-icon">
+                                <i class="fas fa-check-double"></i>
+                            </div>
+                            <div class="insight-text">
+                                <h4>دقة التحويل</h4>
+                                <p>دقة التحويل الصحيح للطلب: 92%. أعلى نسبة خطأ في التحويل من خدمة العملاء إلى قسم الشكاوى.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- تحليلات الزوار وباقي الأقسام -->
+            <section id="visitors-analytics" class="dashboard-section">
+                <h2 class="section-title">تحليلات الزوار</h2>
+                <p class="section-description">تحليل بيانات الزوار وسلوكهم واتجاهاتهم</p>
+                
+                <div class="visitors-charts">
+                    <div class="charts-row">
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>توزيع الزوار اليومي</h3>
+                            </div>
+                            <div class="chart-content">
+                                <canvas id="daily-visitors-chart" width="600" height="300"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>توزيع الزوار حسب الساعة</h3>
+                            </div>
+                            <div class="chart-content">
+                                <canvas id="hourly-visitors-chart" width="600" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="placeholder-text">
+                    <p>تحليلات إضافية للزوار ستظهر هنا</p>
+                </div>
+            </section>
+
+            <section id="strategic-planning" class="dashboard-section">
+                <h2 class="section-title">التخطيط الاستراتيجي</h2>
+                <p class="section-description">أدوات التخطيط والتطوير المستقبلي</p>
+                
+                <div class="placeholder-text">
+                    <p>محتوى التخطيط الاستراتيجي سيظهر هنا</p>
+                </div>
+            </section>
+
+            <section id="executive-reports" class="dashboard-section">
+                <h2 class="section-title">التقارير التنفيذية</h2>
+                <p class="section-description">تقارير أداء شاملة للإدارة العليا</p>
+                
+                <div class="placeholder-text">
+                    <p>محتوى التقارير التنفيذية سيظهر هنا</p>
+                </div>
+            </section>
+
+            <section id="system-configuration" class="dashboard-section">
+                <h2 class="section-title">إعدادات النظام</h2>
+                <p class="section-description">إدارة وتكوين إعدادات النظام المتكامل</p>
+                
+                <div class="placeholder-text">
+                    <p>محتوى إعدادات النظام سيظهر هنا</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- جافا سكريبت -->
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/tracking.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // التبديل بين أقسام لوحة التحكم
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            const dashboardSections = document.querySelectorAll('.dashboard-section');
+            
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // إزالة الفئة النشطة من جميع الروابط والأقسام
+                    sidebarLinks.forEach(link => link.parentElement.classList.remove('active'));
+                    dashboardSections.forEach(section => section.classList.remove('active'));
+                    
+                    // إضافة الفئة النشطة للرابط والقسم المستهدف
+                    this.parentElement.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+            
+            // تبديل عرض حقول التاريخ المخصصة
+            const periodSelect = document.querySelector('select[class="filter-select"]');
+            const dateInputs = document.querySelector('.date-inputs');
+            
+            if (periodSelect && dateInputs) {
+                periodSelect.addEventListener('change', function() {
+                    if (this.value === 'custom') {
+                        dateInputs.style.display = 'flex';
+                    } else {
+                        dateInputs.style.display = 'none';
+                    }
+                });
+            }
+            
+            // تهيئة الرسوم البيانية
+            if (window.dashboardUtils) {
+                window.dashboardUtils.initDashboards();
+            }
+        });
+    </script>
+</body>
+</html>

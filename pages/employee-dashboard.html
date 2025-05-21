@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الموظف - نظام إدارة الزوار</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- إضافة خط مميز للعربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- إضافة مكتبة الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- شريط التنقل العلوي -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo">
+                <h1>نظام إدارة الزوار</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">الرئيسية</a></li>
+                    <li><a href="visitor-dashboard.html">لوحة الزائر</a></li>
+                    <li><a href="employee-dashboard.html" class="active">لوحة الموظف</a></li>
+                    <li><a href="manager-dashboard.html">لوحة المدير</a></li>
+                    <li><a href="admin-dashboard.html">لوحة الإدارة العليا</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <div class="user-info">
+                    <span>سارة خالد</span>
+                    <img src="../assets/images/user-avatar.svg" alt="صورة الموظف" class="avatar">
+                </div>
+                <div class="user-dropdown">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-user"></i> الملف الشخصي</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> الإعدادات</a></li>
+                        <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوى لوحة التحكم -->
+    <div class="dashboard-container">
+        <!-- الشريط الجانبي -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-user">
+                <img src="../assets/images/user-avatar.svg" alt="صورة الموظف" class="avatar">
+                <h3>سارة خالد</h3>
+                <p>أخصائي خدمة العملاء</p>
+                <p>معرف الموظف: E-1234</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard-overview"><i class="fas fa-tachometer-alt"></i> نظرة عامة</a>
+                    </li>
+                    <li>
+                        <a href="#assigned-requests"><i class="fas fa-clipboard-list"></i> الطلبات المسندة <span class="badge badge-primary">5</span></a>
+                    </li>
+                    <li>
+                        <a href="#appointments"><i class="fas fa-calendar-alt"></i> المواعيد <span class="badge badge-primary">2</span></a>
+                    </li>
+                    <li>
+                        <a href="#performance"><i class="fas fa-chart-line"></i> الأداء والإحصائيات</a>
+                    </li>
+                    <li>
+                        <a href="#communications"><i class="fas fa-comments"></i> التواصل الداخلي</a>
+                    </li>
+                    <li>
+                        <a href="#knowledge-base"><i class="fas fa-book"></i> قاعدة المعرفة</a>
+                    </li>
+                    <li>
+                        <a href="#notifications"><i class="fas fa-bell"></i> الإشعارات <span class="badge badge-primary">3</span></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#help"><i class="fas fa-question-circle"></i> مساعدة</a>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+            </div>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="dashboard-content">
+            <!-- نظرة عامة -->
+            <section id="dashboard-overview" class="dashboard-section active">
+                <div class="section-header-with-actions">
+                    <div>
+                        <h2 class="section-title">مرحبًا، سارة خالد</h2>
+                        <p class="section-description">نظرة عامة على الطلبات والمواعيد والأداء</p>
+                    </div>
+                    <div class="date-time-display">
+                        <div class="current-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>الأربعاء، 21 مايو 2025</span>
+                        </div>
+                        <div class="current-time">
+                            <i class="fas fa-clock"></i>
+                            <span id="current-time">10:25:30</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>الطلبات المسندة</h3>
+                            <p>5</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>المكتملة اليوم</h3>
+                            <p>2</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-spinner"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>قيد المعالجة</h3>
+                            <p>3</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>متوسط وقت الإنجاز</h3>
+                            <p>120 <span class="small-text">دقيقة</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tasks-overview">
+                    <div class="today-tasks">
+                        <div class="section-header">
+                            <h3>مهام اليوم</h3>
+                            <a href="#assigned-requests" class="btn btn-sm btn-outline">عرض جميع الطلبات</a>
+                        </div>
+                        <div class="tasks-list">
+                            <div class="task-item high-priority">
+                                <div class="task-status">
+                                    <span class="status-indicator"></span>
+                                    <span class="status-text">عالية</span>
+                                </div>
+                                <div class="task-details">
+                                    <h4>طلب تصحيح بيانات - فاطمة علي</h4>
+                                    <p>تصحيح بيانات الاتصال وتحديث العنوان</p>
+                                </div>
+                                <div class="task-meta">
+                                    <div class="task-id">#REQ-120612</div>
+                                    <div class="task-time">
+                                        <i class="fas fa-clock"></i>
+                                        <span>20 مايو 2025</span>
+                                    </div>
+                                </div>
+                                <div class="task-actions">
+                                    <button class="btn btn-sm btn-primary">معالجة</button>
+                                </div>
+                            </div>
+                            <div class="task-item medium-priority">
+                                <div class="task-status">
+                                    <span class="status-indicator"></span>
+                                    <span class="status-text">متوسطة</span>
+                                </div>
+                                <div class="task-details">
+                                    <h4>تحديث بيانات حساب - محمد أحمد</h4>
+                                    <p>طلب تحديث بيانات الاتصال ورقم الهاتف</p>
+                                </div>
+                                <div class="task-meta">
+                                    <div class="task-id">#REQ-120589</div>
+                                    <div class="task-time">
+                                        <i class="fas fa-clock"></i>
+                                        <span>22 مايو 2025</span>
+                                    </div>
+                                </div>
+                                <div class="task-actions">
+                                    <button class="btn btn-sm btn-primary">معالجة</button>
+                                </div>
+                            </div>
+                            <div class="task-item medium-priority">
+                                <div class="task-status">
+                                    <span class="status-indicator"></span>
+                                    <span class="status-text">متوسطة</span>
+                                </div>
+                                <div class="task-details">
+                                    <h4>مشكلة في جودة المنتج - خالد ناصر</h4>
+                                    <p>التحقق من المنتج وتقييم الحالة</p>
+                                </div>
+                                <div class="task-meta">
+                                    <div class="task-id">#REQ-120634</div>
+                                    <div class="task-time">
+                                        <i class="fas fa-clock"></i>
+                                        <span>23 مايو 2025</span>
+                                    </div>
+                                </div>
+                                <div class="task-actions">
+                                    <button class="btn btn-sm btn-primary">معالجة</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="upcoming-appointments">
+                        <div class="section-header">
+                            <h3>المواعيد القادمة</h3>
+                            <a href="#appointments" class="btn btn-sm btn-outline">عرض الكل</a>
+                        </div>
+                        <div class="appointments-list">
+                            <div class="appointment-item">
+                                <div class="appointment-date">
+                                    <span class="day">21</span>
+                                    <span class="month">مايو</span>
+                                </div>
+                                <div class="appointment-info">
+                                    <h4>متابعة طلب تصحيح بيانات - فاطمة علي</h4>
+                                    <div class="appointment-meta">
+                                        <div class="meta-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span>13:00</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>قسم خدمة العملاء - الطابق الثاني</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="fas fa-hashtag"></i>
+                                            <span>REQ-120612</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="appointment-actions">
+                                    <button class="btn btn-sm btn-primary">تفاصيل</button>
+                                </div>
+                            </div>
+                            <div class="appointment-item">
+                                <div class="appointment-date">
+                                    <span class="day">25</span>
+                                    <span class="month">مايو</span>
+                                </div>
+                                <div class="appointment-info">
+                                    <h4>موعد مراجعة معاملة - محمد أحمد</h4>
+                                    <div class="appointment-meta">
+                                        <div class="meta-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span>10:30</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>قسم خدمة العملاء - الطابق الثاني</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="fas fa-hashtag"></i>
+                                            <span>REQ-120589</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="appointment-actions">
+                                    <button class="btn btn-sm btn-primary">تفاصيل</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-performance">
+                    <div class="section-header">
+                        <h3>ملخص الأداء</h3>
+                        <a href="#performance" class="btn btn-sm btn-outline">عرض التفاصيل</a>
+                    </div>
+                    <div class="performance-metrics">
+                        <div class="metric-card">
+                            <div class="metric-title">
+                                <i class="fas fa-check-circle"></i>
+                                <span>معدل الإنجاز</span>
+                            </div>
+                            <div class="metric-value">92<span class="percent">%</span></div>
+                            <div class="metric-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>3% من الأسبوع الماضي</span>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-title">
+                                <i class="fas fa-star"></i>
+                                <span>رضا الزوار</span>
+                            </div>
+                            <div class="metric-value">4.7<span class="small-text">/5</span></div>
+                            <div class="metric-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>0.2 من الأسبوع الماضي</span>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-title">
+                                <i class="fas fa-clock"></i>
+                                <span>متوسط وقت الاستجابة</span>
+                            </div>
+                            <div class="metric-value">45<span class="small-text"> دقيقة</span></div>
+                            <div class="metric-trend negative">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>5 دقائق من الأسبوع الماضي</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- الطلبات المسندة -->
+            <section id="assigned-requests" class="dashboard-section">
+                <h2 class="section-title">الطلبات المسندة</h2>
+                <p class="section-description">عرض وإدارة جميع الطلبات المسندة إليك</p>
+
+                <div class="filter-controls">
+                    <div class="form-group">
+                        <input type="text" placeholder="بحث..." class="search-input">
+                    </div>
+                    <div class="form-group">
+                        <select class="filter-select">
+                            <option value="all">جميع الحالات</option>
+                            <option value="new">جديد</option>
+                            <option value="in-progress">جاري المعالجة</option>
+                            <option value="completed">مكتمل</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="filter-select">
+                            <option value="all">جميع الأولويات</option>
+                            <option value="high">عالية</option>
+                            <option value="medium">متوسطة</option>
+                            <option value="low">منخفضة</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">تطبيق</button>
+                        <button class="btn btn-outline">إعادة تعيين</button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>رقم الطلب</th>
+                                <th>الزائر</th>
+                                <th>الموضوع</th>
+                                <th>رقم الهاتف</th>
+                                <th>تاريخ الإنشاء</th>
+                                <th>الموعد النهائي</th>
+                                <th>الأولوية</th>
+                                <th>الحالة</th>
+                                <th>نسبة الإنجاز</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>REQ-120612</td>
+                                <td>فاطمة علي</td>
+                                <td>طلب تصحيح بيانات</td>
+                                <td>0554321678</td>
+                                <td>18 مايو 2025</td>
+                                <td>20 مايو 2025</td>
+                                <td><span class="priority priority-high">عالية</span></td>
+                                <td><span class="status status-new">جديد</span></td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 10%;"></div>
+                                        <span>10%</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-request" data-id="REQ-120612">معالجة</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>REQ-120589</td>
+                                <td>محمد أحمد</td>
+                                <td>تحديث بيانات حساب</td>
+                                <td>0501234567</td>
+                                <td>15 مايو 2025</td>
+                                <td>22 مايو 2025</td>
+                                <td><span class="priority priority-medium">متوسطة</span></td>
+                                <td><span class="status status-progress">جاري المعالجة</span></td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 60%;"></div>
+                                        <span>60%</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-request" data-id="REQ-120589">متابعة</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>REQ-120634</td>
+                                <td>خالد ناصر</td>
+                                <td>مشكلة في جودة المنتج</td>
+                                <td>0559876543</td>
+                                <td>17 مايو 2025</td>
+                                <td>23 مايو 2025</td>
+                                <td><span class="priority priority-medium">متوسطة</span></td>
+                                <td><span class="status status-new">جديد</span></td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 5%;"></div>
+                                        <span>5%</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-request" data-id="REQ-120634">معالجة</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>REQ-120498</td>
+                                <td>أحمد محمد</td>
+                                <td>استفسار عن المنتجات</td>
+                                <td>0567891234</td>
+                                <td>14 مايو 2025</td>
+                                <td>19 مايو 2025</td>
+                                <td><span class="priority priority-low">منخفضة</span></td>
+                                <td><span class="status status-completed">مكتمل</span></td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress completed" style="width: 100%;"></div>
+                                        <span>100%</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline view-request" data-id="REQ-120498">عرض</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>REQ-120356</td>
+                                <td>مريم سعيد</td>
+                                <td>طلب استبدال منتج</td>
+                                <td>0512345678</td>
+                                <td>12 مايو 2025</td>
+                                <td>17 مايو 2025</td>
+                                <td><span class="priority priority-medium">متوسطة</span></td>
+                                <td><span class="status status-completed">مكتمل</span></td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress completed" style="width: 100%;"></div>
+                                        <span>100%</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline view-request" data-id="REQ-120356">عرض</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="btn btn-sm btn-outline pagination-btn" disabled>السابق</button>
+                    <div class="pagination-pages">
+                        <button class="pagination-page active">1</button>
+                        <button class="pagination-page">2</button>
+                        <button class="pagination-page">3</button>
+                    </div>
+                    <button class="btn btn-sm btn-outline pagination-btn">التالي</button>
+                </div>
+            </section>
+
+            <!-- المواعيد -->
+            <section id="appointments" class="dashboard-section">
+                <h2 class="section-title">إدارة المواعيد</h2>
+                <p class="section-description">عرض وإدارة المواعيد المجدولة</p>
+
+                <div class="appointments-calendar-view">
+                    <div class="calendar-header">
+                        <div class="calendar-navigation">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-chevron-right"></i></button>
+                            <h3>مايو 2025</h3>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-chevron-left"></i></button>
+                        </div>
+                        <div class="view-options">
+                            <button class="btn btn-sm btn-outline active">اليوم</button>
+                            <button class="btn btn-sm btn-outline">الأسبوع</button>
+                            <button class="btn btn-sm btn-outline">الشهر</button>
+                        </div>
+                    </div>
+
+                    <div class="daily-schedule">
+                        <div class="date-info">
+                            <h4>الأربعاء، 21 مايو 2025</h4>
+                        </div>
+                        <div class="time-slots">
+                            <div class="time-marker">
+                                <div class="marker-line"></div>
+                                <div class="marker-time">الآن 10:25</div>
+                            </div>
+                            <div class="hour-row">
+                                <div class="hour-label">9:00</div>
+                                <div class="hour-slots">
+                                    <div class="empty-slot"></div>
+                                </div>
+                            </div>
+                            <div class="hour-row">
+                                <div class="hour-label">10:00</div>
+                                <div class="hour-slots">
+                                    <div class="empty-slot"></div>
+                                </div>
+                            </div>
+                            <div class="hour-row">
+                                <div class="hour-label">11:00</div>
+                                <div class="hour-slots">
+                                    <div class="empty-slot"></div>
+                                </div>
+                            </div>
+                            <div class="hour-row">
+                                <div class="hour-label">13:00</div>
+                                <div class="hour-slots">
+                                    <div class="appointment-slot">
+                                        <div class="appointment-card">
+                                            <div class="appointment-time">13:00 - 13:30</div>
+                                            <div class="appointment-title">متابعة طلب تصحيح بيانات - فاطمة علي</div>
+                                            <div class="appointment-details">
+                                                <span><i class="fas fa-hashtag"></i> REQ-120612</span>
+                                                <span><i class="fas fa-map-marker-alt"></i> قسم خدمة العملاء</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hour-row">
+                                <div class="hour-label">14:00</div>
+                                <div class="hour-slots">
+                                    <div class="empty-slot"></div>
+                                </div>
+                            </div>
+                            <div class="hour-row">
+                                <div class="hour-label">15:00</div>
+                                <div class="hour-slots">
+                                    <div class="empty-slot"></div>
+                                </div>
+                            </div>
+                            <div class="hour-row">
+                                <div class="hour-label">16:00</div>
+                                <div class="hour-slots">
+                                    <div class="empty-slot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="upcoming-appointments-list">
+                        <h4>المواعيد القادمة</h4>
+                        <div class="appointments-grid">
+                            <div class="appointment-card">
+                                <div class="appointment-date">
+                                    <span class="day">21</span>
+                                    <span class="month">مايو</span>
+                                </div>
+                                <div class="appointment-info">
+                                    <h4>متابعة طلب تصحيح بيانات - فاطمة علي</h4>
+                                    <div class="appointment-meta">
+                                        <div class="meta-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span>13:00 - 13:30</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>قسم خدمة العملاء - الطابق الثاني</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="fas fa-hashtag"></i>
+                                            <span>REQ-120612</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="appointment-actions">
+                                    <button class="btn btn-sm btn-primary">تفاصيل</button>
+                                    <button class="btn btn-sm btn-outline">تعديل</button>
+                                </div>
+                            </div>
+                            <div class="appointment-card">
+                                <div class="appointment-date">
+                                    <span class="day">25</span>
+                                    <span class="month">مايو</span>
+                                </div>
+                                <div class="appointment-info">
+                                    <h4>موعد مراجعة معاملة - محمد أحمد</h4>
+                                    <div class="appointment-meta">
+                                        <div class="meta-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span>10:30 - 11:00</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>قسم خدمة العملاء - الطابق الثاني</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="fas fa-hashtag"></i>
+                                            <span>REQ-120589</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="appointment-actions">
+                                    <button class="btn btn-sm btn-primary">تفاصيل</button>
+                                    <button class="btn btn-sm btn-outline">تعديل</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- الأداء والإحصائيات -->
+            <section id="performance" class="dashboard-section">
+                <h2 class="section-title">الأداء والإحصائيات</h2>
+                <p class="section-description">عرض وتحليل أداء العمل والإنجازات</p>
+
+                <div class="performance-summary">
+                    <div class="summary-cards">
+                        <div class="summary-card">
+                            <div class="summary-title">معدل الإنجاز</div>
+                            <div class="summary-value">92%</div>
+                            <div class="summary-chart">
+                                <div class="circular-progress" style="--progress: 92%;">
+                                    <div class="inner">92%</div>
+                                </div>
+                            </div>
+                            <div class="summary-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>3% من الشهر الماضي</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-title">رضا الزوار</div>
+                            <div class="summary-value">4.7/5</div>
+                            <div class="summary-chart">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <div class="summary-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>0.2 من الشهر الماضي</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-title">متوسط وقت الاستجابة</div>
+                            <div class="summary-value">45 دقيقة</div>
+                            <div class="summary-chart">
+                                <div class="horizontal-progress">
+                                    <div class="bar" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div class="summary-trend negative">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>5 دقائق من الشهر الماضي</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="performance-charts">
+                    <div class="chart-container">
+                        <h3>الطلبات المكتملة في الأسبوع</h3>
+                        <canvas id="employee-requests-chart" width="600" height="300"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>تقييمات الزوار في الأسبوع</h3>
+                        <canvas id="employee-ratings-chart" width="600" height="300"></canvas>
+                    </div>
+                </div>
+
+                <div class="recent-feedback">
+                    <h3>أحدث تقييمات الزوار</h3>
+                    <div class="feedback-list">
+                        <div class="feedback-item">
+                            <div class="feedback-header">
+                                <div class="visitor-info">
+                                    <img src="../assets/images/user-avatar.svg" alt="صورة الزائر" class="avatar-small">
+                                    <div>
+                                        <h4>محمد أحمد</h4>
+                                        <div class="feedback-meta">
+                                            <span>REQ-120589</span> | 
+                                            <span>16 مايو 2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feedback-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="rating-value">5.0</div>
+                                </div>
+                            </div>
+                            <div class="feedback-content">
+                                <p>شكراً جزيلاً للموظفة سارة على سرعة الاستجابة والتعامل الاحترافي. تم حل المشكلة بسرعة وكفاءة عالية.</p>
+                            </div>
+                        </div>
+                        <div class="feedback-item">
+                            <div class="feedback-header">
+                                <div class="visitor-info">
+                                    <img src="../assets/images/user-avatar.svg" alt="صورة الزائر" class="avatar-small">
+                                    <div>
+                                        <h4>أحمد محمد</h4>
+                                        <div class="feedback-meta">
+                                            <span>REQ-120498</span> | 
+                                            <span>14 مايو 2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feedback-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="rating-value">4.0</div>
+                                </div>
+                            </div>
+                            <div class="feedback-content">
+                                <p>خدمة جيدة وسريعة، لكن كان هناك بعض التأخير في الرد على استفساراتي البسيطة.</p>
+                            </div>
+                        </div>
+                        <div class="feedback-item">
+                            <div class="feedback-header">
+                                <div class="visitor-info">
+                                    <img src="../assets/images/user-avatar.svg" alt="صورة الزائر" class="avatar-small">
+                                    <div>
+                                        <h4>مريم سعيد</h4>
+                                        <div class="feedback-meta">
+                                            <span>REQ-120356</span> | 
+                                            <span>12 مايو 2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feedback-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <div class="rating-value">4.5</div>
+                                </div>
+                            </div>
+                            <div class="feedback-content">
+                                <p>تعامل الموظفة سارة كان ممتازاً وودوداً، وتم استبدال المنتج بسرعة وكفاءة. أشكركم على الخدمة الرائعة.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- التواصل الداخلي -->
+            <section id="communications" class="dashboard-section">
+                <h2 class="section-title">التواصل الداخلي</h2>
+                <p class="section-description">التواصل مع الزملاء وإدارة الأقسام</p>
+
+                <div class="communication-container">
+                    <div class="communication-sidebar">
+                        <div class="communication-header">
+                            <h3>المحادثات</h3>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-plus"></i> محادثة جديدة</button>
+                        </div>
+                        <div class="search-bar">
+                            <input type="text" placeholder="بحث عن موظف..." class="search-input">
+                        </div>
+                        <div class="chat-list">
+                            <div class="chat-item active">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة الموظف" class="avatar-small">
+                                <div class="chat-info">
+                                    <h4>فهد محمد</h4>
+                                    <p>مدير خدمة العملاء</p>
+                                </div>
+                                <div class="chat-meta">
+                                    <span class="time">10:15</span>
+                                    <span class="unread-count">2</span>
+                                </div>
+                            </div>
+                            <div class="chat-item">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة الموظف" class="avatar-small">
+                                <div class="chat-info">
+                                    <h4>نورة علي</h4>
+                                    <p>متخصص تحديث البيانات</p>
+                                </div>
+                                <div class="chat-meta">
+                                    <span class="time">أمس</span>
+                                </div>
+                            </div>
+                            <div class="chat-item">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة الموظف" class="avatar-small">
+                                <div class="chat-info">
+                                    <h4>عبدالله حمد</h4>
+                                    <p>متخصص استقبال الشكاوى</p>
+                                </div>
+                                <div class="chat-meta">
+                                    <span class="time">18 مايو</span>
+                                </div>
+                            </div>
+                            <div class="chat-item">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة الموظف" class="avatar-small">
+                                <div class="chat-info">
+                                    <h4>منى سعد</h4>
+                                    <p>أخصائي جودة المنتجات</p>
+                                </div>
+                                <div class="chat-meta">
+                                    <span class="time">15 مايو</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="department-channels">
+                            <h3>قنوات الأقسام</h3>
+                            <div class="channel-list">
+                                <div class="channel-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>فريق خدمة العملاء</span>
+                                </div>
+                                <div class="channel-item">
+                                    <i class="fas fa-headset"></i>
+                                    <span>الدعم الفني</span>
+                                </div>
+                                <div class="channel-item">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    <span>إعلانات وتنبيهات</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-container">
+                        <div class="chat-header">
+                            <div class="chat-user">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة الموظف" class="avatar-small">
+                                <div>
+                                    <h4>فهد محمد</h4>
+                                    <p>مدير خدمة العملاء</p>
+                                </div>
+                            </div>
+                            <div class="chat-actions">
+                                <button class="btn btn-sm btn-outline"><i class="fas fa-phone"></i></button>
+                                <button class="btn btn-sm btn-outline"><i class="fas fa-video"></i></button>
+                                <button class="btn btn-sm btn-outline"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        <div class="chat-messages">
+                            <div class="message-date">اليوم</div>
+                            <div class="message received">
+                                <div class="message-content">
+                                    <p>صباح الخير سارة، كيف حالك اليوم؟</p>
+                                </div>
+                                <div class="message-time">09:30</div>
+                            </div>
+                            <div class="message sent">
+                                <div class="message-content">
+                                    <p>صباح النور أستاذ فهد، الحمد لله بخير. كيف حالك أنت؟</p>
+                                </div>
+                                <div class="message-time">09:32</div>
+                            </div>
+                            <div class="message received">
+                                <div class="message-content">
+                                    <p>بخير الحمد لله. أردت الاطمئنان على طلب العميل محمد أحمد (REQ-120589). هل هناك أي مستجدات؟</p>
+                                </div>
+                                <div class="message-time">09:35</div>
+                            </div>
+                            <div class="message received">
+                                <div class="message-content">
+                                    <p>أيضًا لدينا طلب عالي الأولوية من العميلة فاطمة علي (REQ-120612). يرجى التركيز عليه اليوم.</p>
+                                </div>
+                                <div class="message-time">09:36</div>
+                            </div>
+                            <div class="message sent">
+                                <div class="message-content">
+                                    <p>نعم، بالنسبة لطلب السيد محمد، فقد أكملت حوالي 60% من الطلب وأتوقع الانتهاء منه غدًا.</p>
+                                </div>
+                                <div class="message-time">09:40</div>
+                            </div>
+                            <div class="message sent">
+                                <div class="message-content">
+                                    <p>وبخصوص طلب السيدة فاطمة، سأبدأ العمل عليه فورًا. لدي موعد معها اليوم الساعة 1 ظهرًا لمتابعة الطلب.</p>
+                                </div>
+                                <div class="message-time">09:41</div>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-paperclip"></i></button>
+                            <input type="text" placeholder="اكتب رسالتك هنا..." class="message-input">
+                            <button class="btn btn-sm btn-primary"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قاعدة المعرفة -->
+            <section id="knowledge-base" class="dashboard-section">
+                <h2 class="section-title">قاعدة المعرفة</h2>
+                <p class="section-description">الوصول إلى المعلومات والإجراءات والسياسات</p>
+
+                <div class="knowledge-base-container">
+                    <div class="search-container">
+                        <div class="search-bar large">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="ابحث في قاعدة المعرفة..." class="search-input">
+                        </div>
+                        <div class="popular-tags">
+                            <span class="tag">إجراءات</span>
+                            <span class="tag">سياسات</span>
+                            <span class="tag">نماذج</span>
+                            <span class="tag">حلول متكررة</span>
+                            <span class="tag">تحديث البيانات</span>
+                        </div>
+                    </div>
+
+                    <div class="knowledge-categories">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3>دليل الإجراءات</h3>
+                            <p>إجراءات وسياسات معالجة طلبات الزوار</p>
+                            <a href="#" class="category-link">عرض <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h3>نماذج وقوالب</h3>
+                            <p>نماذج وقوالب جاهزة للاستخدام</p>
+                            <a href="#" class="category-link">عرض <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <h3>الأسئلة المتكررة</h3>
+                            <p>إجابات للأسئلة الشائعة من الزوار</p>
+                            <a href="#" class="category-link">عرض <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3>أدوات وحلول</h3>
+                            <p>أدوات مساعدة لحل المشكلات الشائعة</p>
+                            <a href="#" class="category-link">عرض <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>مواد تدريبية</h3>
+                            <p>دورات ومواد تدريبية للموظفين</p>
+                            <a href="#" class="category-link">عرض <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <h3>تحديثات ونشرات</h3>
+                            <p>آخر التحديثات والنشرات الداخلية</p>
+                            <a href="#" class="category-link">عرض <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="recent-articles">
+                        <h3>آخر المقالات المضافة</h3>
+                        <div class="articles-list">
+                            <div class="article-item">
+                                <h4>دليل معالجة طلبات تحديث البيانات</h4>
+                                <p>إجراءات وخطوات معالجة طلبات تحديث بيانات الحسابات والاتصال</p>
+                                <div class="article-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 15 مايو 2025</span>
+                                    <span><i class="fas fa-user"></i> فهد محمد</span>
+                                </div>
+                                <a href="#" class="article-link">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                            </div>
+                            <div class="article-item">
+                                <h4>كيفية التعامل مع شكاوى جودة المنتجات</h4>
+                                <p>خطوات وإرشادات للتعامل مع شكاوى الزوار المتعلقة بجودة المنتجات</p>
+                                <div class="article-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 10 مايو 2025</span>
+                                    <span><i class="fas fa-user"></i> منى سعد</span>
+                                </div>
+                                <a href="#" class="article-link">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                            </div>
+                            <div class="article-item">
+                                <h4>نموذج استبدال المنتجات المعيبة</h4>
+                                <p>نموذج جاهز لإجراءات استبدال المنتجات المعيبة وتعويض العملاء</p>
+                                <div class="article-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 5 مايو 2025</span>
+                                    <span><i class="fas fa-user"></i> أحمد محمد</span>
+                                </div>
+                                <a href="#" class="article-link">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- الإشعارات -->
+            <section id="notifications" class="dashboard-section">
+                <h2 class="section-title">الإشعارات</h2>
+                <p class="section-description">عرض جميع الإشعارات والتنبيهات</p>
+
+                <div class="notifications-actions">
+                    <button class="btn btn-outline">تعليم الكل كمقروء</button>
+                    <div class="form-group">
+                        <select id="notification-filter" class="filter-select">
+                            <option value="all">جميع الإشعارات</option>
+                            <option value="unread">غير مقروءة فقط</option>
+                            <option value="read">مقروءة فقط</option>
+                            <option value="tasks">المهام</option>
+                            <option value="requests">الطلبات</option>
+                            <option value="system">إشعارات النظام</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="notifications-list">
+                    <div class="notification-item unread">
+                        <div class="notification-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>تم تعيين طلب جديد</h4>
+                            <p>تم تعيينك للعمل على طلب جديد: <span class="highlight">REQ-120634</span> (مشكلة في جودة المنتج - خالد ناصر)</p>
+                            <div class="notification-time">منذ ساعتين</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-primary"><i class="fas fa-eye"></i> عرض</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="notification-item unread">
+                        <div class="notification-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>تذكير بموعد اليوم</h4>
+                            <p>لديك موعد اليوم الساعة 1:00 ظهرًا مع <span class="highlight">فاطمة علي</span> بخصوص طلب تصحيح البيانات</p>
+                            <div class="notification-time">منذ 3 ساعات</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-primary"><i class="fas fa-eye"></i> عرض</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="notification-item unread">
+                        <div class="notification-icon">
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>رسالة جديدة</h4>
+                            <p>لديك رسالة جديدة من <span class="highlight">فهد محمد</span> (مدير خدمة العملاء)</p>
+                            <div class="notification-time">منذ 4 ساعات</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-primary"><i class="fas fa-eye"></i> عرض</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="notification-item read">
+                        <div class="notification-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>تقييم جديد</h4>
+                            <p>حصلت على تقييم 5/5 من <span class="highlight">محمد أحمد</span> على طلب تحديث بيانات الحساب</p>
+                            <div class="notification-time">أمس، 14:20</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="notification-item read">
+                        <div class="notification-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>تم اكتمال الطلب</h4>
+                            <p>تم إغلاق طلب <span class="highlight">REQ-120356</span> (طلب استبدال منتج - مريم سعيد) بنجاح</p>
+                            <div class="notification-time">17 مايو 2025، 15:30</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <button class="btn btn-sm btn-outline pagination-btn" disabled>السابق</button>
+                    <div class="pagination-pages">
+                        <button class="pagination-page active">1</button>
+                        <button class="pagination-page">2</button>
+                        <button class="pagination-page">3</button>
+                    </div>
+                    <button class="btn btn-sm btn-outline pagination-btn">التالي</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- نافذة عرض تفاصيل الطلب -->
+    <div class="modal" id="request-details-modal">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h3>تفاصيل الطلب <span id="request-id">REQ-120589</span></h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="request-details">
+                    <div class="request-info">
+                        <div class="request-header">
+                            <h4>تحديث بيانات حساب</h4>
+                            <span class="status status-progress">جاري المعالجة</span>
+                        </div>
+                        <div class="request-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">الزائر</span>
+                                <span class="meta-value">محمد أحمد</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">رقم الهاتف</span>
+                                <span class="meta-value">0501234567</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">تاريخ الإنشاء</span>
+                                <span class="meta-value">15 مايو 2025، 09:30 صباحًا</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">آخر تحديث</span>
+                                <span class="meta-value">16 مايو 2025، 11:45 صباحًا</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">الموعد النهائي</span>
+                                <span class="meta-value">22 مايو 2025، 04:00 مساءً</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">القسم</span>
+                                <span class="meta-value">خدمة العملاء</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">الأولوية</span>
+                                <span class="meta-value priority-medium">متوسطة</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">نسبة الإنجاز</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%;"></div>
+                                    <span>60%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="request-description">
+                        <h4>وصف الطلب</h4>
+                        <p>طلب تحديث بيانات الاتصال ورقم الهاتف المسجل في الحساب</p>
+                    </div>
+                    
+                    <div class="request-timeline">
+                        <h4>المخطط الزمني</h4>
+                        <div class="timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>استلام الطلب</h5>
+                                    <p>تم استلام الطلب وتسجيله في النظام</p>
+                                    <div class="timeline-meta">
+                                        <span class="employee">سارة خالد (E-1234)</span>
+                                        <span class="time">15 مايو 2025، 09:30 صباحًا</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>مراجعة أولية</h5>
+                                    <p>تمت مراجعة الطلب وقبوله للمعالجة</p>
+                                    <div class="timeline-meta">
+                                        <span class="employee">سارة خالد (E-1234)</span>
+                                        <span class="time">15 مايو 2025، 10:00 صباحًا</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>الاتصال بالزائر</h5>
+                                    <p>تم الاتصال بالزائر للتأكد من البيانات المطلوب تحديثها</p>
+                                    <div class="timeline-meta">
+                                        <span class="employee">سارة خالد (E-1234)</span>
+                                        <span class="time">16 مايو 2025، 11:45 صباحًا</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item pending">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>تحديث البيانات</h5>
+                                    <p>جاري تحديث البيانات في النظام</p>
+                                    <div class="timeline-meta">
+                                        <span class="employee">سارة خالد (E-1234)</span>
+                                        <span class="time">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item pending">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>مراجعة نهائية</h5>
+                                    <p>في انتظار المراجعة النهائية</p>
+                                    <div class="timeline-meta">
+                                        <span class="employee">-</span>
+                                        <span class="time">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item pending">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-flag-checkered"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>إغلاق الطلب</h5>
+                                    <p>في انتظار إغلاق الطلب</p>
+                                    <div class="timeline-meta">
+                                        <span class="employee">-</span>
+                                        <span class="time">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="request-update">
+                        <h4>تحديث حالة الطلب</h4>
+                        <form id="update-request-form">
+                            <div class="form-group">
+                                <label for="request-status">الحالة</label>
+                                <select id="request-status" name="request-status">
+                                    <option value="in-progress" selected>جاري المعالجة</option>
+                                    <option value="pending-review">بانتظار المراجعة</option>
+                                    <option value="completed">مكتمل</option>
+                                    <option value="canceled">ملغي</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="update-notes">ملاحظات التحديث</label>
+                                <textarea id="update-notes" name="update-notes" rows="3" placeholder="أدخل ملاحظات حول تحديث الحالة..."></textarea>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="submit" class="btn btn-primary">تحديث الحالة</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="comments-section">
+                        <h4>التعليقات والمحادثات</h4>
+                        <div class="comments-list">
+                            <div class="comment-item">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة المستخدم" class="avatar-small">
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <h5>فهد محمد</h5>
+                                        <span class="time">15 مايو 2025، 10:45 صباحًا</span>
+                                    </div>
+                                    <p>يرجى التواصل مع العميل للتأكد من البيانات المطلوب تحديثها، ومن ثم تحديثها في النظام.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="comment-item user-comment">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة المستخدم" class="avatar-small">
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <h5>سارة خالد (أنت)</h5>
+                                        <span class="time">16 مايو 2025، 11:45 صباحًا</span>
+                                    </div>
+                                    <p>تم التواصل مع العميل وتأكيد البيانات المطلوب تحديثها. سأبدأ بتحديث البيانات في النظام.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="add-comment-form">
+                            <form id="comment-form">
+                                <div class="form-group">
+                                    <textarea id="comment-text" name="comment-text" rows="3" placeholder="اكتب تعليقك هنا..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">إرسال التعليق</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- جافا سكريبت -->
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/tracking.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // التبديل بين أقسام لوحة التحكم
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            const dashboardSections = document.querySelectorAll('.dashboard-section');
+            
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // إزالة الفئة النشطة من جميع الروابط والأقسام
+                    sidebarLinks.forEach(link => link.parentElement.classList.remove('active'));
+                    dashboardSections.forEach(section => section.classList.remove('active'));
+                    
+                    // إضافة الفئة النشطة للرابط والقسم المستهدف
+                    this.parentElement.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+            
+            // فتح نافذة تفاصيل الطلب
+            const viewRequestButtons = document.querySelectorAll('.view-request');
+            const requestDetailsModal = document.getElementById('request-details-modal');
+            
+            viewRequestButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const requestId = this.getAttribute('data-id');
+                    document.getElementById('request-id').textContent = requestId;
+                    
+                    // في التطبيق الحقيقي، يتم تحميل بيانات الطلب بناءً على المعرف
+                    
+                    // فتح النافذة المنبثقة
+                    requestDetailsModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // إغلاق النوافذ المنبثقة
+            const closeBtns = document.querySelectorAll('.close-modal');
+            
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const modal = this.closest('.modal');
+                    if (modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+            
+            // إغلاق النافذة المنبثقة عند النقر خارج المحتوى
+            const modals = document.querySelectorAll('.modal');
+            
+            modals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+            
+            // معالجة النماذج
+            const forms = document.querySelectorAll('form');
+            
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // محاكاة إرسال النموذج
+                    alert('تم إرسال النموذج بنجاح!');
+                    
+                    // إغلاق النافذة المنبثقة إذا كان النموذج داخل نافذة منبثقة
+                    const modal = this.closest('.modal');
+                    if (modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+            
+            // تهيئة الرسوم البيانية
+            if (window.dashboardUtils) {
+                window.dashboardUtils.initDashboards();
+            }
+        });
+    </script>
+</body>
+</html>

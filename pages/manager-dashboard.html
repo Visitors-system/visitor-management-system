@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم المدير - نظام إدارة الزوار</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- إضافة خط مميز للعربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- إضافة مكتبة الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- شريط التنقل العلوي -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo">
+                <h1>نظام إدارة الزوار</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">الرئيسية</a></li>
+                    <li><a href="visitor-dashboard.html">لوحة الزائر</a></li>
+                    <li><a href="employee-dashboard.html">لوحة الموظف</a></li>
+                    <li><a href="manager-dashboard.html" class="active">لوحة المدير</a></li>
+                    <li><a href="admin-dashboard.html">لوحة الإدارة العليا</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <div class="user-info">
+                    <span>فهد محمد</span>
+                    <img src="../assets/images/user-avatar.svg" alt="صورة المدير" class="avatar">
+                </div>
+                <div class="user-dropdown">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-user"></i> الملف الشخصي</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> الإعدادات</a></li>
+                        <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوى لوحة التحكم -->
+    <div class="dashboard-container">
+        <!-- الشريط الجانبي -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-user">
+                <img src="../assets/images/user-avatar.svg" alt="صورة المدير" class="avatar">
+                <h3>فهد محمد</h3>
+                <p>مدير خدمة العملاء</p>
+                <p>معرف الموظف: E-5678</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard-overview"><i class="fas fa-tachometer-alt"></i> نظرة عامة</a>
+                    </li>
+                    <li>
+                        <a href="#department-performance"><i class="fas fa-chart-line"></i> أداء القسم</a>
+                    </li>
+                    <li>
+                        <a href="#employee-management"><i class="fas fa-users-cog"></i> إدارة الموظفين</a>
+                    </li>
+                    <li>
+                        <a href="#requests-monitoring"><i class="fas fa-clipboard-list"></i> متابعة الطلبات <span class="badge badge-danger">3</span></a>
+                    </li>
+                    <li>
+                        <a href="#reports"><i class="fas fa-file-alt"></i> التقارير</a>
+                    </li>
+                    <li>
+                        <a href="#resource-management"><i class="fas fa-tasks"></i> إدارة الموارد</a>
+                    </li>
+                    <li>
+                        <a href="#settings"><i class="fas fa-cog"></i> الإعدادات</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#help"><i class="fas fa-question-circle"></i> مساعدة</a>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+            </div>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="dashboard-content">
+            <!-- نظرة عامة -->
+            <section id="dashboard-overview" class="dashboard-section active">
+                <div class="section-header-with-actions">
+                    <div>
+                        <h2 class="section-title">مرحبًا، فهد محمد</h2>
+                        <p class="section-description">نظرة عامة على أداء القسم والطلبات</p>
+                    </div>
+                    <div class="date-time-display">
+                        <div class="current-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>الأربعاء، 21 مايو 2025</span>
+                        </div>
+                        <div class="current-time">
+                            <i class="fas fa-clock"></i>
+                            <span id="current-time">10:25:30</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>إجمالي الطلبات</h3>
+                            <p>45</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>الطلبات المكتملة</h3>
+                            <p>32</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-spinner"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>قيد المعالجة</h3>
+                            <p>12</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>طلبات متأخرة</h3>
+                            <p>3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-metrics">
+                    <div class="metrics-row">
+                        <div class="metric-card large">
+                            <div class="metric-header">
+                                <h3>توزيع الطلبات حسب النوع</h3>
+                                <div class="card-actions">
+                                    <button class="btn btn-sm btn-outline"><i class="fas fa-download"></i></button>
+                                    <button class="btn btn-sm btn-outline"><i class="fas fa-expand"></i></button>
+                                </div>
+                            </div>
+                            <div class="metric-content">
+                                <canvas id="requests-distribution-chart" width="400" height="300"></canvas>
+                            </div>
+                        </div>
+                        <div class="metric-card large">
+                            <div class="metric-header">
+                                <h3>حالة الطلبات</h3>
+                                <div class="card-actions">
+                                    <button class="btn btn-sm btn-outline"><i class="fas fa-download"></i></button>
+                                    <button class="btn btn-sm btn-outline"><i class="fas fa-expand"></i></button>
+                                </div>
+                            </div>
+                            <div class="metric-content">
+                                <canvas id="requests-status-chart" width="400" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metrics-row">
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <h3>متوسط رضا الزوار</h3>
+                            </div>
+                            <div class="metric-content centered">
+                                <div class="satisfaction-meter">
+                                    <div class="satisfaction-value">4.6</div>
+                                    <div class="satisfaction-label">من 5</div>
+                                    <div class="rating-stars large">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <h3>متوسط وقت الإنجاز</h3>
+                            </div>
+                            <div class="metric-content centered">
+                                <div class="time-meter">
+                                    <div class="time-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="time-value">110</div>
+                                    <div class="time-label">دقيقة</div>
+                                </div>
+                                <div class="trend positive">
+                                    <i class="fas fa-arrow-down"></i>
+                                    <span>5% من الشهر الماضي</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <h3>معدل الإنجاز</h3>
+                            </div>
+                            <div class="metric-content centered">
+                                <div class="circular-progress" style="--progress: 71%;">
+                                    <div class="inner">71%</div>
+                                </div>
+                                <div class="completion-label">نسبة الطلبات المكتملة</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="delayed-requests">
+                    <div class="section-header">
+                        <h3>الطلبات المتأخرة</h3>
+                        <a href="#requests-monitoring" class="btn btn-sm btn-danger">معالجة الطلبات المتأخرة</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table highlight-rows">
+                            <thead>
+                                <tr>
+                                    <th>رقم الطلب</th>
+                                    <th>الموضوع</th>
+                                    <th>المسؤول</th>
+                                    <th>الموعد النهائي</th>
+                                    <th>الحالة الحالية</th>
+                                    <th>مدة التأخير</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>REQ-119234</td>
+                                    <td>مشكلة في دفع الفاتورة</td>
+                                    <td>عبدالله حمد</td>
+                                    <td>15 مايو 2025</td>
+                                    <td><span class="status status-progress">جاري المعالجة</span></td>
+                                    <td><span class="delay-time">32 ساعة</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary">متابعة</button>
+                                        <button class="btn btn-sm btn-outline">إعادة تعيين</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REQ-119546</td>
+                                    <td>طلب استرجاع منتج</td>
+                                    <td>نورة علي</td>
+                                    <td>16 مايو 2025</td>
+                                    <td><span class="status status-progress">جاري المعالجة</span></td>
+                                    <td><span class="delay-time">24 ساعة</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary">متابعة</button>
+                                        <button class="btn btn-sm btn-outline">إعادة تعيين</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REQ-119873</td>
+                                    <td>مشكلة في تسجيل الدخول</td>
+                                    <td>فهد محمد</td>
+                                    <td>17 مايو 2025</td>
+                                    <td><span class="status status-progress">جاري المعالجة</span></td>
+                                    <td><span class="delay-time">8 ساعات</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary">متابعة</button>
+                                        <button class="btn btn-sm btn-outline">إعادة تعيين</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="overview-actions">
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="action-text">
+                            <h3>إدارة الطلبات</h3>
+                            <p>متابعة وإدارة الطلبات المختلفة</p>
+                        </div>
+                        <a href="#requests-monitoring" class="btn btn-primary">عرض</a>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="action-text">
+                            <h3>إدارة الموظفين</h3>
+                            <p>متابعة وتقييم أداء الموظفين</p>
+                        </div>
+                        <a href="#employee-management" class="btn btn-primary">عرض</a>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="action-text">
+                            <h3>التقارير</h3>
+                            <p>عرض وتحليل تقارير الأداء</p>
+                        </div>
+                        <a href="#reports" class="btn btn-primary">عرض</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- أداء القسم -->
+            <section id="department-performance" class="dashboard-section">
+                <h2 class="section-title">أداء القسم</h2>
+                <p class="section-description">تحليل وعرض مؤشرات أداء القسم والموظفين</p>
+
+                <div class="filter-controls">
+                    <div class="form-group">
+                        <label>الفترة الزمنية</label>
+                        <select class="filter-select">
+                            <option value="week">الأسبوع الحالي</option>
+                            <option value="month" selected>الشهر الحالي</option>
+                            <option value="quarter">الربع الحالي</option>
+                            <option value="year">السنة الحالية</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>عرض حسب</label>
+                        <select class="filter-select">
+                            <option value="all" selected>جميع المؤشرات</option>
+                            <option value="completion">معدل الإنجاز</option>
+                            <option value="satisfaction">رضا الزوار</option>
+                            <option value="response-time">وقت الاستجابة</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn btn-primary">تطبيق</button>
+                        <button class="btn btn-outline">إعادة تعيين</button>
+                    </div>
+                </div>
+
+                <div class="performance-summary">
+                    <div class="summary-cards">
+                        <div class="summary-card">
+                            <div class="summary-title">معدل الإنجاز</div>
+                            <div class="summary-value">71%</div>
+                            <div class="summary-chart">
+                                <div class="circular-progress" style="--progress: 71%;">
+                                    <div class="inner">71%</div>
+                                </div>
+                            </div>
+                            <div class="summary-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>5% من الشهر الماضي</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-title">رضا الزوار</div>
+                            <div class="summary-value">4.6/5</div>
+                            <div class="summary-chart">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <div class="summary-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>0.2 من الشهر الماضي</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-title">متوسط وقت الإنجاز</div>
+                            <div class="summary-value">110 دقيقة</div>
+                            <div class="summary-chart">
+                                <div class="horizontal-progress">
+                                    <div class="bar" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                            <div class="summary-trend positive">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>10 دقائق من الشهر الماضي</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="employee-performance">
+                    <div class="section-header">
+                        <h3>أداء الموظفين</h3>
+                        <div class="actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-download"></i> تصدير</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-print"></i> طباعة</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>معرف الموظف</th>
+                                    <th>الاسم</th>
+                                    <th>المسمى الوظيفي</th>
+                                    <th>الطلبات المكتملة</th>
+                                    <th>نسبة رضا الزوار</th>
+                                    <th>متوسط وقت الاستجابة</th>
+                                    <th>الأداء العام</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>E-1234</td>
+                                    <td>سارة خالد</td>
+                                    <td>أخصائي خدمة العملاء</td>
+                                    <td>18</td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                            <span>4.8</span>
+                                        </div>
+                                    </td>
+                                    <td>35 دقيقة</td>
+                                    <td>
+                                        <div class="performance-indicator excellent">
+                                            <i class="fas fa-circle"></i>
+                                            <span>ممتاز</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline">التفاصيل</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>E-5678</td>
+                                    <td>فهد محمد</td>
+                                    <td>مدير خدمة العملاء</td>
+                                    <td>12</td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                            <span>4.6</span>
+                                        </div>
+                                    </td>
+                                    <td>40 دقيقة</td>
+                                    <td>
+                                        <div class="performance-indicator good">
+                                            <i class="fas fa-circle"></i>
+                                            <span>جيد جداً</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline">التفاصيل</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>E-9012</td>
+                                    <td>نورة علي</td>
+                                    <td>متخصص تحديث البيانات</td>
+                                    <td>15</td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                            <span>4.7</span>
+                                        </div>
+                                    </td>
+                                    <td>38 دقيقة</td>
+                                    <td>
+                                        <div class="performance-indicator good">
+                                            <i class="fas fa-circle"></i>
+                                            <span>جيد جداً</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline">التفاصيل</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>E-3456</td>
+                                    <td>عبدالله حمد</td>
+                                    <td>متخصص استقبال الشكاوى</td>
+                                    <td>14</td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                            <span>4.3</span>
+                                        </div>
+                                    </td>
+                                    <td>42 دقيقة</td>
+                                    <td>
+                                        <div class="performance-indicator average">
+                                            <i class="fas fa-circle"></i>
+                                            <span>جيد</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline">التفاصيل</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="performance-charts">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>اتجاهات الأداء الشهرية</h3>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="color-indicator" style="background-color: #2563eb;"></span>
+                                    <span>معدل الإنجاز</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="color-indicator" style="background-color: #10b981;"></span>
+                                    <span>رضا الزوار</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="color-indicator" style="background-color: #f59e0b;"></span>
+                                    <span>وقت الاستجابة</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-content">
+                            <!-- سيتم إنشاء الرسم البياني هنا باستخدام جافا سكريبت -->
+                            <div class="chart-placeholder">
+                                <div class="placeholder-text">سيتم عرض اتجاهات الأداء الشهرية هنا</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- إدارة الموظفين -->
+            <section id="employee-management" class="dashboard-section">
+                <h2 class="section-title">إدارة الموظفين</h2>
+                <p class="section-description">إدارة وتنظيم فريق العمل ومتابعة أدائهم</p>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> إضافة موظف جديد</button>
+                    <button class="btn btn-outline"><i class="fas fa-file-export"></i> تصدير البيانات</button>
+                </div>
+
+                <div class="search-filter-section">
+                    <div class="search-bar large">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="بحث عن موظف..." class="search-input">
+                    </div>
+                    <div class="filter-chips">
+                        <div class="filter-chip active">الكل</div>
+                        <div class="filter-chip">نشط</div>
+                        <div class="filter-chip">إجازة</div>
+                        <div class="filter-chip">متاح</div>
+                        <div class="filter-chip">مشغول</div>
+                    </div>
+                </div>
+
+                <div class="employees-grid">
+                    <div class="employee-card">
+                        <div class="employee-status active"></div>
+                        <div class="employee-avatar">
+                            <img src="../assets/images/user-avatar.svg" alt="صورة الموظف">
+                        </div>
+                        <div class="employee-info">
+                            <h3>سارة خالد</h3>
+                            <p>أخصائي خدمة العملاء</p>
+                            <div class="employee-id">E-1234</div>
+                        </div>
+                        <div class="employee-stats">
+                            <div class="stat">
+                                <span class="stat-value">18</span>
+                                <span class="stat-label">الطلبات المكتملة</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4.8</span>
+                                <span class="stat-label">التقييم</span>
+                            </div>
+                        </div>
+                        <div class="employee-workload">
+                            <div class="workload-label">عبء العمل</div>
+                            <div class="workload-bar">
+                                <div class="workload-progress" style="width: 65%;"></div>
+                            </div>
+                            <div class="workload-value">65%</div>
+                        </div>
+                        <div class="employee-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-tasks"></i> المهام</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-chart-line"></i> الأداء</button>
+                            <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> تعديل</button>
+                        </div>
+                    </div>
+
+                    <div class="employee-card">
+                        <div class="employee-status away"></div>
+                        <div class="employee-avatar">
+                            <img src="../assets/images/user-avatar.svg" alt="صورة الموظف">
+                        </div>
+                        <div class="employee-info">
+                            <h3>فهد محمد</h3>
+                            <p>مدير خدمة العملاء</p>
+                            <div class="employee-id">E-5678</div>
+                        </div>
+                        <div class="employee-stats">
+                            <div class="stat">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">الطلبات المكتملة</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4.6</span>
+                                <span class="stat-label">التقييم</span>
+                            </div>
+                        </div>
+                        <div class="employee-workload">
+                            <div class="workload-label">عبء العمل</div>
+                            <div class="workload-bar">
+                                <div class="workload-progress" style="width: 80%;"></div>
+                            </div>
+                            <div class="workload-value">80%</div>
+                        </div>
+                        <div class="employee-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-tasks"></i> المهام</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-chart-line"></i> الأداء</button>
+                            <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> تعديل</button>
+                        </div>
+                    </div>
+
+                    <div class="employee-card">
+                        <div class="employee-status active"></div>
+                        <div class="employee-avatar">
+                            <img src="../assets/images/user-avatar.svg" alt="صورة الموظف">
+                        </div>
+                        <div class="employee-info">
+                            <h3>نورة علي</h3>
+                            <p>متخصص تحديث البيانات</p>
+                            <div class="employee-id">E-9012</div>
+                        </div>
+                        <div class="employee-stats">
+                            <div class="stat">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">الطلبات المكتملة</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4.7</span>
+                                <span class="stat-label">التقييم</span>
+                            </div>
+                        </div>
+                        <div class="employee-workload">
+                            <div class="workload-label">عبء العمل</div>
+                            <div class="workload-bar">
+                                <div class="workload-progress" style="width: 70%;"></div>
+                            </div>
+                            <div class="workload-value">70%</div>
+                        </div>
+                        <div class="employee-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-tasks"></i> المهام</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-chart-line"></i> الأداء</button>
+                            <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> تعديل</button>
+                        </div>
+                    </div>
+
+                    <div class="employee-card">
+                        <div class="employee-status busy"></div>
+                        <div class="employee-avatar">
+                            <img src="../assets/images/user-avatar.svg" alt="صورة الموظف">
+                        </div>
+                        <div class="employee-info">
+                            <h3>عبدالله حمد</h3>
+                            <p>متخصص استقبال الشكاوى</p>
+                            <div class="employee-id">E-3456</div>
+                        </div>
+                        <div class="employee-stats">
+                            <div class="stat">
+                                <span class="stat-value">14</span>
+                                <span class="stat-label">الطلبات المكتملة</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4.3</span>
+                                <span class="stat-label">التقييم</span>
+                            </div>
+                        </div>
+                        <div class="employee-workload">
+                            <div class="workload-label">عبء العمل</div>
+                            <div class="workload-bar">
+                                <div class="workload-progress high" style="width: 90%;"></div>
+                            </div>
+                            <div class="workload-value">90%</div>
+                        </div>
+                        <div class="employee-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-tasks"></i> المهام</button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-chart-line"></i> الأداء</button>
+                            <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> تعديل</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-distribution">
+                    <div class="section-header">
+                        <h3>توزيع المهام الحالية</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table compact">
+                            <thead>
+                                <tr>
+                                    <th>رقم الطلب</th>
+                                    <th>الموضوع</th>
+                                    <th>المسؤول</th>
+                                    <th>تاريخ الإسناد</th>
+                                    <th>الموعد النهائي</th>
+                                    <th>الحالة</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>REQ-120612</td>
+                                    <td>طلب تصحيح بيانات</td>
+                                    <td>سارة خالد</td>
+                                    <td>18 مايو 2025</td>
+                                    <td>20 مايو 2025</td>
+                                    <td><span class="status status-new">جديد</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline"><i class="fas fa-sync-alt"></i></button>
+                                        <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REQ-120589</td>
+                                    <td>تحديث بيانات حساب</td>
+                                    <td>سارة خالد</td>
+                                    <td>15 مايو 2025</td>
+                                    <td>22 مايو 2025</td>
+                                    <td><span class="status status-progress">جاري المعالجة</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline"><i class="fas fa-sync-alt"></i></button>
+                                        <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REQ-120634</td>
+                                    <td>مشكلة في جودة المنتج</td>
+                                    <td>نورة علي</td>
+                                    <td>17 مايو 2025</td>
+                                    <td>23 مايو 2025</td>
+                                    <td><span class="status status-new">جديد</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline"><i class="fas fa-sync-alt"></i></button>
+                                        <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REQ-119873</td>
+                                    <td>مشكلة في تسجيل الدخول</td>
+                                    <td>فهد محمد</td>
+                                    <td>14 مايو 2025</td>
+                                    <td>17 مايو 2025</td>
+                                    <td><span class="status status-progress">جاري المعالجة</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline"><i class="fas fa-sync-alt"></i></button>
+                                        <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- متابعة الطلبات -->
+            <section id="requests-monitoring" class="dashboard-section">
+                <h2 class="section-title">متابعة الطلبات</h2>
+                <p class="section-description">إدارة ومراقبة جميع الطلبات في القسم</p>
+
+                <div class="filter-controls">
+                    <div class="form-group">
+                        <input type="text" placeholder="بحث عن طلب..." class="search-input">
+                    </div>
+                    <div class="form-group">
+                        <select class="filter-select">
+                            <option value="all">جميع الحالات</option>
+                            <option value="new">جديد</option>
+                            <option value="in-progress">جاري المعالجة</option>
+                            <option value="completed">مكتمل</option>
+                            <option value="delayed">متأخر</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="filter-select">
+                            <option value="all">جميع الأنواع</option>
+                            <option value="service">طلب خدمة</option>
+                            <option value="inquiry">استفسار</option>
+                            <option value="complaint">شكوى</option>
+                            <option value="suggestion">اقتراح</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">تطبيق</button>
+                        <button class="btn btn-outline">إعادة تعيين</button>
+                    </div>
+                </div>
+
+                <div class="requests-kanban">
+                    <div class="kanban-column">
+                        <div class="column-header">
+                            <h3>جديد</h3>
+                            <span class="count">6</span>
+                        </div>
+                        <div class="kanban-items">
+                            <div class="kanban-item">
+                                <div class="item-header">
+                                    <span class="item-id">REQ-120612</span>
+                                    <span class="priority high">عالية</span>
+                                </div>
+                                <h4>طلب تصحيح بيانات</h4>
+                                <div class="item-details">
+                                    <p>فاطمة علي - تصحيح بيانات الاتصال وتحديث العنوان</p>
+                                </div>
+                                <div class="item-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 20 مايو 2025</span>
+                                    <span><i class="fas fa-user"></i> سارة خالد</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-sm btn-outline">تعيين</button>
+                                    <button class="btn btn-sm btn-primary">عرض</button>
+                                </div>
+                            </div>
+                            <div class="kanban-item">
+                                <div class="item-header">
+                                    <span class="item-id">REQ-120634</span>
+                                    <span class="priority medium">متوسطة</span>
+                                </div>
+                                <h4>مشكلة في جودة المنتج</h4>
+                                <div class="item-details">
+                                    <p>خالد ناصر - المنتج المستلم به عيوب تصنيعية</p>
+                                </div>
+                                <div class="item-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 23 مايو 2025</span>
+                                    <span><i class="fas fa-user"></i> نورة علي</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-sm btn-outline">تعيين</button>
+                                    <button class="btn btn-sm btn-primary">عرض</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanban-column">
+                        <div class="column-header">
+                            <h3>جاري المعالجة</h3>
+                            <span class="count">7</span>
+                        </div>
+                        <div class="kanban-items">
+                            <div class="kanban-item">
+                                <div class="item-header">
+                                    <span class="item-id">REQ-120589</span>
+                                    <span class="priority medium">متوسطة</span>
+                                </div>
+                                <h4>تحديث بيانات حساب</h4>
+                                <div class="item-details">
+                                    <p>محمد أحمد - تحديث بيانات الاتصال ورقم الهاتف</p>
+                                </div>
+                                <div class="item-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 22 مايو 2025</span>
+                                    <span><i class="fas fa-user"></i> سارة خالد</span>
+                                </div>
+                                <div class="item-progress">
+                                    <div class="progress-bar small">
+                                        <div class="progress" style="width: 60%;"></div>
+                                        <span>60%</span>
+                                    </div>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-sm btn-primary">عرض</button>
+                                </div>
+                            </div>
+                            <div class="kanban-item">
+                                <div class="item-header red-alert">
+                                    <span class="item-id">REQ-119873</span>
+                                    <span class="priority medium">متوسطة</span>
+                                </div>
+                                <h4>مشكلة في تسجيل الدخول</h4>
+                                <div class="item-details">
+                                    <p>أحمد علي - لا يمكن تسجيل الدخول للحساب</p>
+                                </div>
+                                <div class="item-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 17 مايو 2025</span>
+                                    <span><i class="fas fa-user"></i> فهد محمد</span>
+                                </div>
+                                <div class="item-progress">
+                                    <div class="progress-bar small">
+                                        <div class="progress" style="width: 45%;"></div>
+                                        <span>45%</span>
+                                    </div>
+                                </div>
+                                <div class="delay-badge">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <span>متأخر بـ 8 ساعات</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-sm btn-primary">عرض</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanban-column">
+                        <div class="column-header">
+                            <h3>مكتمل</h3>
+                            <span class="count">32</span>
+                        </div>
+                        <div class="kanban-items">
+                            <div class="kanban-item">
+                                <div class="item-header">
+                                    <span class="item-id">REQ-120498</span>
+                                    <span class="priority low">منخفضة</span>
+                                </div>
+                                <h4>استفسار عن المنتجات</h4>
+                                <div class="item-details">
+                                    <p>أحمد محمد - استفسار عن مواصفات المنتجات</p>
+                                </div>
+                                <div class="item-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 19 مايو 2025</span>
+                                    <span><i class="fas fa-user"></i> سارة خالد</span>
+                                </div>
+                                <div class="item-feedback">
+                                    <div class="rating-display small">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span>5.0</span>
+                                    </div>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-sm btn-outline">عرض</button>
+                                </div>
+                            </div>
+                            <div class="kanban-item">
+                                <div class="item-header">
+                                    <span class="item-id">REQ-120356</span>
+                                    <span class="priority medium">متوسطة</span>
+                                </div>
+                                <h4>طلب استبدال منتج</h4>
+                                <div class="item-details">
+                                    <p>مريم سعيد - استبدال منتج بسبب مشكلة في الجودة</p>
+                                </div>
+                                <div class="item-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> 17 مايو 2025</span>
+                                    <span><i class="fas fa-user"></i> سارة خالد</span>
+                                </div>
+                                <div class="item-feedback">
+                                    <div class="rating-display small">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <span>4.5</span>
+                                    </div>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-sm btn-outline">عرض</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم التقارير والإعدادات موجز -->
+            <section id="reports" class="dashboard-section">
+                <h2 class="section-title">التقارير</h2>
+                <p class="section-description">عرض وتحليل تقارير الأداء وإحصائيات القسم</p>
+                
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="report-details">
+                            <h3>تقرير أداء الموظفين</h3>
+                            <p>تقييم أداء الموظفين في القسم</p>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn btn-primary">عرض</button>
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="report-details">
+                            <h3>تقرير الطلبات</h3>
+                            <p>تقرير شامل عن الطلبات ومعدلات الإنجاز</p>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn btn-primary">عرض</button>
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="report-details">
+                            <h3>تقرير رضا الزوار</h3>
+                            <p>تحليل رضا الزوار وتقييماتهم</p>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn btn-primary">عرض</button>
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="report-details">
+                            <h3>تقرير أوقات الاستجابة</h3>
+                            <p>تحليل أوقات الاستجابة والإنجاز</p>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn btn-primary">عرض</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="generating-report">
+                    <p>لعرض التقرير الكامل، يرجى تحديد الخيارات وإنشاء التقرير</p>
+                </div>
+            </section>
+
+            <section id="resource-management" class="dashboard-section">
+                <h2 class="section-title">إدارة الموارد</h2>
+                <p class="section-description">إدارة موارد القسم وجدولة المهام</p>
+                
+                <div class="placeholder-content">
+                    <p>محتوى إدارة الموارد سيظهر هنا</p>
+                </div>
+            </section>
+
+            <section id="settings" class="dashboard-section">
+                <h2 class="section-title">الإعدادات</h2>
+                <p class="section-description">إعدادات لوحة التحكم وخيارات القسم</p>
+                
+                <div class="placeholder-content">
+                    <p>محتوى الإعدادات سيظهر هنا</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- نافذة عرض تفاصيل الطلب -->
+    <div class="modal" id="request-details-modal">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h3>تفاصيل الطلب <span id="request-id">REQ-120589</span></h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="placeholder-content">
+                    <p>محتوى تفاصيل الطلب سيظهر هنا</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- جافا سكريبت -->
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/tracking.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // التبديل بين أقسام لوحة التحكم
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            const dashboardSections = document.querySelectorAll('.dashboard-section');
+            
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // إزالة الفئة النشطة من جميع الروابط والأقسام
+                    sidebarLinks.forEach(link => link.parentElement.classList.remove('active'));
+                    dashboardSections.forEach(section => section.classList.remove('active'));
+                    
+                    // إضافة الفئة النشطة للرابط والقسم المستهدف
+                    this.parentElement.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+            
+            // تهيئة الرسوم البيانية
+            if (window.dashboardUtils) {
+                window.dashboardUtils.initDashboards();
+            }
+        });
+    </script>
+</body>
+</html>

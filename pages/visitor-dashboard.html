@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الزائر - نظام إدارة الزوار</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- إضافة خط مميز للعربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- إضافة مكتبة الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- شريط التنقل العلوي -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo">
+                <h1>نظام إدارة الزوار</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">الرئيسية</a></li>
+                    <li><a href="visitor-dashboard.html" class="active">لوحة الزائر</a></li>
+                    <li><a href="employee-dashboard.html">لوحة الموظف</a></li>
+                    <li><a href="manager-dashboard.html">لوحة المدير</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <div class="user-info">
+                    <span>محمد أحمد</span>
+                    <img src="../assets/images/user-avatar.svg" alt="صورة المستخدم" class="avatar">
+                </div>
+                <div class="user-dropdown">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-user"></i> الملف الشخصي</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> الإعدادات</a></li>
+                        <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوى لوحة التحكم -->
+    <div class="dashboard-container">
+        <!-- الشريط الجانبي -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-user">
+                <img src="../assets/images/user-avatar.svg" alt="صورة المستخدم" class="avatar">
+                <h3>محمد أحمد</h3>
+                <p>رقم الزائر: V-23456</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard-overview"><i class="fas fa-tachometer-alt"></i> نظرة عامة</a>
+                    </li>
+                    <li>
+                        <a href="#my-requests"><i class="fas fa-clipboard-list"></i> طلباتي</a>
+                    </li>
+                    <li>
+                        <a href="#new-request"><i class="fas fa-plus-circle"></i> طلب جديد</a>
+                    </li>
+                    <li>
+                        <a href="#appointments"><i class="fas fa-calendar-alt"></i> المواعيد</a>
+                    </li>
+                    <li>
+                        <a href="#notifications"><i class="fas fa-bell"></i> الإشعارات <span class="badge badge-primary">3</span></a>
+                    </li>
+                    <li>
+                        <a href="#profile"><i class="fas fa-user"></i> الملف الشخصي</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#help"><i class="fas fa-question-circle"></i> مساعدة</a>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+            </div>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="dashboard-content">
+            <!-- نظرة عامة -->
+            <section id="dashboard-overview" class="dashboard-section active">
+                <h2 class="section-title">مرحبًا بك، محمد أحمد</h2>
+                <p class="section-description">هذه لوحة التحكم الخاصة بك للوصول إلى جميع الخدمات ومتابعة طلباتك</p>
+                
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>الطلبات المكتملة</h3>
+                            <p>3</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-spinner"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>الطلبات قيد المعالجة</h3>
+                            <p>1</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>المواعيد القادمة</h3>
+                            <p>1</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>إشعارات جديدة</h3>
+                            <p>3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-requests">
+                    <div class="section-header">
+                        <h3>آخر الطلبات</h3>
+                        <a href="#my-requests" class="btn btn-sm btn-outline">عرض جميع الطلبات</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>رقم الطلب</th>
+                                    <th>الموضوع</th>
+                                    <th>القسم</th>
+                                    <th>تاريخ الإنشاء</th>
+                                    <th>الحالة</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>REQ-120589</td>
+                                    <td>تحديث بيانات حساب</td>
+                                    <td>خدمة العملاء</td>
+                                    <td>15 مايو 2025</td>
+                                    <td><span class="status status-progress">جاري المعالجة</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary view-request" data-id="REQ-120589">عرض</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REQ-119875</td>
+                                    <td>طلب دعم فني</td>
+                                    <td>الدعم الفني</td>
+                                    <td>10 مايو 2025</td>
+                                    <td><span class="status status-completed">مكتمل</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary view-request" data-id="REQ-119875">عرض</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REQ-119254</td>
+                                    <td>استفسار عن الخدمات</td>
+                                    <td>خدمة العملاء</td>
+                                    <td>5 مايو 2025</td>
+                                    <td><span class="status status-completed">مكتمل</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary view-request" data-id="REQ-119254">عرض</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="upcoming-appointments">
+                    <div class="section-header">
+                        <h3>المواعيد القادمة</h3>
+                        <a href="#appointments" class="btn btn-sm btn-outline">عرض جميع المواعيد</a>
+                    </div>
+                    <div class="appointments-cards">
+                        <div class="appointment-card">
+                            <div class="appointment-date">
+                                <span class="day">25</span>
+                                <span class="month">مايو</span>
+                            </div>
+                            <div class="appointment-details">
+                                <h4>موعد مراجعة معاملة</h4>
+                                <p><i class="fas fa-clock"></i> 10:30 صباحًا</p>
+                                <p><i class="fas fa-map-marker-alt"></i> قسم خدمة العملاء - الطابق الثاني</p>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn btn-sm btn-outline">تعديل</button>
+                                <button class="btn btn-sm btn-danger">إلغاء</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- طلباتي -->
+            <section id="my-requests" class="dashboard-section">
+                <h2 class="section-title">طلباتي</h2>
+                <p class="section-description">عرض وتتبع جميع الطلبات التي قمت بتقديمها</p>
+                
+                <div class="filter-controls">
+                    <div class="form-group">
+                        <input type="text" placeholder="بحث..." class="search-input">
+                    </div>
+                    <div class="form-group">
+                        <select class="filter-select">
+                            <option value="all">جميع الحالات</option>
+                            <option value="new">جديد</option>
+                            <option value="in-progress">جاري المعالجة</option>
+                            <option value="completed">مكتمل</option>
+                            <option value="cancelled">ملغي</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="filter-select">
+                            <option value="all">جميع الأقسام</option>
+                            <option value="customer-service">خدمة العملاء</option>
+                            <option value="technical-support">الدعم الفني</option>
+                            <option value="complaints">الشكاوى</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">تطبيق</button>
+                        <button class="btn btn-outline">إعادة تعيين</button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>رقم الطلب</th>
+                                <th>النوع</th>
+                                <th>الموضوع</th>
+                                <th>القسم</th>
+                                <th>تاريخ الإنشاء</th>
+                                <th>آخر تحديث</th>
+                                <th>الموعد النهائي</th>
+                                <th>الحالة</th>
+                                <th>نسبة الإنجاز</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>REQ-120589</td>
+                                <td>طلب خدمة</td>
+                                <td>تحديث بيانات حساب</td>
+                                <td>خدمة العملاء</td>
+                                <td>15 مايو 2025</td>
+                                <td>16 مايو 2025</td>
+                                <td>22 مايو 2025</td>
+                                <td><span class="status status-progress">جاري المعالجة</span></td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 60%;"></div>
+                                        <span>60%</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-request" data-id="REQ-120589">عرض</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>REQ-119875</td>
+                                <td>طلب دعم</td>
+                                <td>طلب دعم فني</td>
+                                <td>الدعم الفني</td>
+                                <td>10 مايو 2025</td>
+                                <td>14 مايو 2025</td>
+                                <td>17 مايو 2025</td>
+                                <td><span class="status status-completed">مكتمل</span></td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress completed" style="width: 100%;"></div>
+                                        <span>100%</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-request" data-id="REQ-119875">عرض</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>REQ-119254</td>
+                                <td>استفسار</td>
+                                <td>استفسار عن الخدمات</td>
+                                <td>خدمة العملاء</td>
+                                <td>5 مايو 2025</td>
+                                <td>7 مايو 2025</td>
+                                <td>12 مايو 2025</td>
+                                <td><span class="status status-completed">مكتمل</span></td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress completed" style="width: 100%;"></div>
+                                        <span>100%</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-request" data-id="REQ-119254">عرض</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>REQ-118922</td>
+                                <td>شكوى</td>
+                                <td>تأخر في معالجة الطلب</td>
+                                <td>قسم الشكاوى</td>
+                                <td>1 مايو 2025</td>
+                                <td>5 مايو 2025</td>
+                                <td>8 مايو 2025</td>
+                                <td><span class="status status-completed">مكتمل</span></td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress completed" style="width: 100%;"></div>
+                                        <span>100%</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-request" data-id="REQ-118922">عرض</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="btn btn-sm btn-outline pagination-btn" disabled>السابق</button>
+                    <div class="pagination-pages">
+                        <button class="pagination-page active">1</button>
+                        <button class="pagination-page">2</button>
+                        <button class="pagination-page">3</button>
+                    </div>
+                    <button class="btn btn-sm btn-outline pagination-btn">التالي</button>
+                </div>
+            </section>
+
+            <!-- طلب جديد -->
+            <section id="new-request" class="dashboard-section">
+                <h2 class="section-title">تقديم طلب جديد</h2>
+                <p class="section-description">يرجى تعبئة النموذج التالي لتقديم طلب جديد</p>
+                
+                <div class="form-container">
+                    <form id="new-request-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="request-type">نوع الطلب</label>
+                                <select id="request-type" name="request-type" required>
+                                    <option value="">اختر نوع الطلب</option>
+                                    <option value="service">طلب خدمة</option>
+                                    <option value="inquiry">استفسار</option>
+                                    <option value="complaint">شكوى</option>
+                                    <option value="suggestion">اقتراح</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="department">القسم المعني</label>
+                                <select id="department" name="department" required>
+                                    <option value="">اختر القسم</option>
+                                    <option value="customer-service">خدمة العملاء</option>
+                                    <option value="technical-support">الدعم الفني</option>
+                                    <option value="complaints">قسم الشكاوى</option>
+                                    <option value="suggestions">قسم المقترحات</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="priority">الأولوية</label>
+                                <select id="priority" name="priority" required>
+                                    <option value="normal">عادية</option>
+                                    <option value="medium">متوسطة</option>
+                                    <option value="high">عالية</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">الموضوع</label>
+                            <input type="text" id="subject" name="subject" placeholder="أدخل عنوان الطلب" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">التفاصيل</label>
+                            <textarea id="description" name="description" rows="5" placeholder="اكتب تفاصيل طلبك هنا..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="attachments">المرفقات (اختياري)</label>
+                            <div class="file-upload">
+                                <input type="file" id="attachments" name="attachments" multiple>
+                                <label for="attachments" class="file-upload-label">
+                                    <i class="fas fa-cloud-upload-alt"></i> اختر الملفات للرفع
+                                </label>
+                                <div class="file-list"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-primary">تقديم الطلب</button>
+                            <button type="reset" class="btn btn-outline">إعادة تعيين</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- المواعيد -->
+            <section id="appointments" class="dashboard-section">
+                <h2 class="section-title">إدارة المواعيد</h2>
+                <p class="section-description">عرض وحجز المواعيد الخاصة بك</p>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="book-appointment-btn">
+                        <i class="fas fa-plus"></i> حجز موعد جديد
+                    </button>
+                </div>
+                
+                <div class="appointments-container">
+                    <div class="appointments-header">
+                        <h3>المواعيد القادمة</h3>
+                    </div>
+                    <div class="appointments-list">
+                        <div class="appointment-card">
+                            <div class="appointment-date">
+                                <span class="day">25</span>
+                                <span class="month">مايو</span>
+                            </div>
+                            <div class="appointment-details">
+                                <h4>موعد مراجعة معاملة</h4>
+                                <p><i class="fas fa-clock"></i> 10:30 صباحًا</p>
+                                <p><i class="fas fa-map-marker-alt"></i> قسم خدمة العملاء - الطابق الثاني</p>
+                                <p><i class="fas fa-user"></i> الموظف المسؤول: سارة خالد</p>
+                                <div class="appointment-status">
+                                    <span class="status status-scheduled">مؤكد</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn btn-sm btn-outline">تعديل</button>
+                                <button class="btn btn-sm btn-danger">إلغاء</button>
+                            </div>
+                        </div>
+                        
+                        <div class="appointments-header mt-4">
+                            <h3>المواعيد السابقة</h3>
+                        </div>
+                        
+                        <div class="appointment-card past">
+                            <div class="appointment-date">
+                                <span class="day">15</span>
+                                <span class="month">مايو</span>
+                            </div>
+                            <div class="appointment-details">
+                                <h4>موعد تقديم طلب جديد</h4>
+                                <p><i class="fas fa-clock"></i> 11:00 صباحًا</p>
+                                <p><i class="fas fa-map-marker-alt"></i> قسم استقبال الطلبات - الطابق الأول</p>
+                                <p><i class="fas fa-user"></i> الموظف المسؤول: فهد محمد</p>
+                                <div class="appointment-status">
+                                    <span class="status status-completed">تم الحضور</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn btn-sm btn-primary view-details">عرض التفاصيل</button>
+                            </div>
+                        </div>
+                        
+                        <div class="appointment-card past">
+                            <div class="appointment-date">
+                                <span class="day">5</span>
+                                <span class="month">مايو</span>
+                            </div>
+                            <div class="appointment-details">
+                                <h4>موعد متابعة طلب</h4>
+                                <p><i class="fas fa-clock"></i> 1:30 مساءً</p>
+                                <p><i class="fas fa-map-marker-alt"></i> قسم المتابعة - الطابق الثاني</p>
+                                <p><i class="fas fa-user"></i> الموظف المسؤول: أحمد علي</p>
+                                <div class="appointment-status">
+                                    <span class="status status-completed">تم الحضور</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn btn-sm btn-primary view-details">عرض التفاصيل</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- الإشعارات -->
+            <section id="notifications" class="dashboard-section">
+                <h2 class="section-title">الإشعارات</h2>
+                <p class="section-description">عرض جميع الإشعارات الخاصة بك</p>
+                
+                <div class="notifications-actions">
+                    <button class="btn btn-outline">تعليم الكل كمقروء</button>
+                    <div class="form-group">
+                        <select id="notification-filter" class="filter-select">
+                            <option value="all">جميع الإشعارات</option>
+                            <option value="unread">غير مقروءة فقط</option>
+                            <option value="read">مقروءة فقط</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="notifications-list">
+                    <div class="notification-item unread">
+                        <div class="notification-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>تم تحديث حالة الطلب</h4>
+                            <p>تم تحديث حالة طلبك رقم REQ-120589 إلى "جاري المعالجة"</p>
+                            <div class="notification-time">منذ ساعتين</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item unread">
+                        <div class="notification-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>تعيين موظف جديد</h4>
+                            <p>تم تعيين نورة علي كمتخصص تحديث البيانات لطلبك رقم REQ-120589</p>
+                            <div class="notification-time">منذ 5 ساعات</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item unread">
+                        <div class="notification-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>تأكيد موعد</h4>
+                            <p>تم تأكيد موعدك ليوم 25 مايو 2025 الساعة 10:30 صباحًا</p>
+                            <div class="notification-time">أمس، 11:20 صباحًا</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item read">
+                        <div class="notification-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>اكتمال الطلب</h4>
+                            <p>تم اكتمال طلبك رقم REQ-119875 بنجاح</p>
+                            <div class="notification-time">14 مايو 2025، 3:45 مساءً</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item read">
+                        <div class="notification-icon">
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>تعليق جديد</h4>
+                            <p>أضاف فهد محمد تعليقًا على طلبك رقم REQ-119875</p>
+                            <div class="notification-time">13 مايو 2025، 10:15 صباحًا</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <button class="btn btn-sm btn-outline pagination-btn" disabled>السابق</button>
+                    <div class="pagination-pages">
+                        <button class="pagination-page active">1</button>
+                        <button class="pagination-page">2</button>
+                    </div>
+                    <button class="btn btn-sm btn-outline pagination-btn">التالي</button>
+                </div>
+            </section>
+
+            <!-- الملف الشخصي -->
+            <section id="profile" class="dashboard-section">
+                <h2 class="section-title">الملف الشخصي</h2>
+                <p class="section-description">تحديث معلوماتك الشخصية والإعدادات</p>
+                
+                <div class="profile-container">
+                    <div class="profile-sidebar">
+                        <div class="profile-picture">
+                            <img src="../assets/images/user-avatar.svg" alt="صورة المستخدم" class="avatar-large">
+                            <button class="change-picture-btn">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <h3>محمد أحمد</h3>
+                        <p>رقم الزائر: V-23456</p>
+                        <div class="profile-menu">
+                            <a href="#personal-info" class="profile-menu-item active">المعلومات الشخصية</a>
+                            <a href="#contact-info" class="profile-menu-item">معلومات الاتصال</a>
+                            <a href="#account-security" class="profile-menu-item">أمان الحساب</a>
+                            <a href="#notification-settings" class="profile-menu-item">إعدادات الإشعارات</a>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-content">
+                        <div id="personal-info" class="profile-section active">
+                            <h3>المعلومات الشخصية</h3>
+                            <form id="personal-info-form">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="full-name">الاسم الكامل</label>
+                                        <input type="text" id="full-name" name="full-name" value="محمد أحمد">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id-number">رقم الهوية</label>
+                                        <input type="text" id="id-number" name="id-number" value="1234567890">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dob">تاريخ الميلاد</label>
+                                        <input type="date" id="dob" name="dob" value="1990-05-15">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">الجنس</label>
+                                        <select id="gender" name="gender">
+                                            <option value="male" selected>ذكر</option>
+                                            <option value="female">أنثى</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nationality">الجنسية</label>
+                                        <select id="nationality" name="nationality">
+                                            <option value="saudi" selected>سعودي</option>
+                                            <option value="uae">إماراتي</option>
+                                            <option value="kuwait">كويتي</option>
+                                            <option value="bahrain">بحريني</option>
+                                            <option value="oman">عماني</option>
+                                            <option value="qatar">قطري</option>
+                                            <option value="other">أخرى</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="language">اللغة المفضلة</label>
+                                        <select id="language" name="language">
+                                            <option value="arabic" selected>العربية</option>
+                                            <option value="english">الإنجليزية</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-buttons">
+                                    <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+                                    <button type="reset" class="btn btn-outline">إلغاء</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div id="contact-info" class="profile-section">
+                            <h3>معلومات الاتصال</h3>
+                            <form id="contact-info-form">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="email">البريد الإلكتروني</label>
+                                        <input type="email" id="email" name="email" value="mohammed.ahmed@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">رقم الهاتف</label>
+                                        <input type="tel" id="phone" name="phone" value="0501234567">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="alt-phone">رقم هاتف بديل (اختياري)</label>
+                                        <input type="tel" id="alt-phone" name="alt-phone" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address">العنوان</label>
+                                        <input type="text" id="address" name="address" value="حي النرجس، الرياض">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="city">المدينة</label>
+                                        <input type="text" id="city" name="city" value="الرياض">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="postal-code">الرمز البريدي</label>
+                                        <input type="text" id="postal-code" name="postal-code" value="12345">
+                                    </div>
+                                </div>
+                                <div class="form-buttons">
+                                    <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+                                    <button type="reset" class="btn btn-outline">إلغاء</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div id="account-security" class="profile-section">
+                            <h3>أمان الحساب</h3>
+                            <form id="security-form">
+                                <div class="form-group">
+                                    <label for="current-password">كلمة المرور الحالية</label>
+                                    <div class="password-input">
+                                        <input type="password" id="current-password" name="current-password">
+                                        <button type="button" class="toggle-password">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-password">كلمة المرور الجديدة</label>
+                                    <div class="password-input">
+                                        <input type="password" id="new-password" name="new-password">
+                                        <button type="button" class="toggle-password">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password">تأكيد كلمة المرور الجديدة</label>
+                                    <div class="password-input">
+                                        <input type="password" id="confirm-password" name="confirm-password">
+                                        <button type="button" class="toggle-password">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <h4>التحقق بخطوتين</h4>
+                                    <div class="toggle-control">
+                                        <label class="switch">
+                                            <input type="checkbox" id="two-factor" name="two-factor">
+                                            <span class="slider round"></span>
+                                        </label>
+                                        <label for="two-factor">تفعيل التحقق بخطوتين</label>
+                                    </div>
+                                    <p class="form-hint">يتطلب التحقق بخطوتين رمزًا إضافيًا يتم إرساله إلى هاتفك عند تسجيل الدخول.</p>
+                                </div>
+                                
+                                <div class="form-buttons">
+                                    <button type="submit" class="btn btn-primary">تحديث كلمة المرور</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div id="notification-settings" class="profile-section">
+                            <h3>إعدادات الإشعارات</h3>
+                            <form id="notification-settings-form">
+                                <div class="notification-options">
+                                    <div class="notification-option">
+                                        <div class="notification-info">
+                                            <h4>تحديثات الطلبات</h4>
+                                            <p>الإشعارات عندما يتم تحديث حالة طلباتك أو تعيين موظف جديد</p>
+                                        </div>
+                                        <div class="notification-channels">
+                                            <div class="toggle-control">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="request-updates-email" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <span>البريد الإلكتروني</span>
+                                            </div>
+                                            <div class="toggle-control">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="request-updates-sms" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <span>رسائل SMS</span>
+                                            </div>
+                                            <div class="toggle-control">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="request-updates-app" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <span>في التطبيق</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="notification-option">
+                                        <div class="notification-info">
+                                            <h4>تذكيرات المواعيد</h4>
+                                            <p>تذكيرات قبل المواعيد المحددة</p>
+                                        </div>
+                                        <div class="notification-channels">
+                                            <div class="toggle-control">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="appointment-reminders-email" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <span>البريد الإلكتروني</span>
+                                            </div>
+                                            <div class="toggle-control">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="appointment-reminders-sms" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <span>رسائل SMS</span>
+                                            </div>
+                                            <div class="toggle-control">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="appointment-reminders-app" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <span>في التطبيق</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="notification-option">
+                                        <div class="notification-info">
+                                            <h4>المواعيد النهائية</h4>
+                                            <p>تنبيهات عندما تقترب المواعيد النهائية للطلبات</p>
+                                        </div>
+                                        <div class="notification-channels">
+                                            <div class="toggle-control">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="deadline-alerts-email" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <span>البريد الإلكتروني</span>
+                                            </div>
+                                            <div class="toggle-control">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="deadline-alerts-sms">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <span>رسائل SMS</span>
+                                            </div>
+                                            <div class="toggle-control">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="deadline-alerts-app" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <span>في التطبيق</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="notification-option">
+                                        <div class="notification-info">
+                                            <h4>الإعلانات والأخبار</h4>
+                                            <p>معلومات عن التحديثات والميزات الجديدة</p>
+                                        </div>
+                                        <div class="notification-channels">
+                                            <div class="toggle-control">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="announcements-email">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <span>البريد الإلكتروني</span>
+                                            </div>
+                                            <div class="toggle-control">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="announcements-sms">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <span>رسائل SMS</span>
+                                            </div>
+                                            <div class="toggle-control">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="announcements-app" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <span>في التطبيق</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-buttons">
+                                    <button type="submit" class="btn btn-primary">حفظ الإعدادات</button>
+                                    <button type="reset" class="btn btn-outline">استعادة الإعدادات الافتراضية</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- نافذة عرض تفاصيل الطلب -->
+    <div class="modal" id="request-details-modal">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h3>تفاصيل الطلب <span id="request-id">REQ-120589</span></h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="request-details">
+                    <div class="request-info">
+                        <div class="request-header">
+                            <h4>تحديث بيانات حساب</h4>
+                            <span class="status status-progress">جاري المعالجة</span>
+                        </div>
+                        <div class="request-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">تاريخ الإنشاء</span>
+                                <span class="meta-value">15 مايو 2025، 09:30 صباحًا</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">آخر تحديث</span>
+                                <span class="meta-value">16 مايو 2025، 11:45 صباحًا</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">الموعد النهائي</span>
+                                <span class="meta-value">22 مايو 2025، 04:00 مساءً</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">القسم</span>
+                                <span class="meta-value">خدمة العملاء</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">الأولوية</span>
+                                <span class="meta-value priority-medium">متوسطة</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">نسبة الإنجاز</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%;"></div>
+                                    <span>60%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="request-description">
+                        <h4>وصف الطلب</h4>
+                        <p>طلب تحديث بيانات الاتصال ورقم الهاتف المسجل في الحساب</p>
+                    </div>
+                    
+                    <div class="assigned-staff">
+                        <h4>الموظفون المعينون</h4>
+                        <div class="staff-list">
+                            <div class="staff-item">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة الموظف" class="avatar-small">
+                                <div class="staff-info">
+                                    <h5>سارة خالد <span class="employee-id">E-1234</span></h5>
+                                    <p>مستقبل الطلب</p>
+                                    <span class="status status-completed">مكتمل</span>
+                                </div>
+                                <div class="staff-time">
+                                    <p>15 مايو 2025، 09:30 - 09:45</p>
+                                </div>
+                            </div>
+                            
+                            <div class="staff-item">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة الموظف" class="avatar-small">
+                                <div class="staff-info">
+                                    <h5>فهد محمد <span class="employee-id">E-5678</span></h5>
+                                    <p>مدير القسم</p>
+                                    <span class="status status-completed">مكتمل</span>
+                                </div>
+                                <div class="staff-time">
+                                    <p>15 مايو 2025، 10:00 - 10:30</p>
+                                </div>
+                            </div>
+                            
+                            <div class="staff-item">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة الموظف" class="avatar-small">
+                                <div class="staff-info">
+                                    <h5>نورة علي <span class="employee-id">E-9012</span></h5>
+                                    <p>متخصص تحديث البيانات</p>
+                                    <span class="status status-progress">قيد التنفيذ</span>
+                                </div>
+                                <div class="staff-time">
+                                    <p>16 مايو 2025، 11:45 - الآن</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="request-timeline">
+                        <h4>المخطط الزمني</h4>
+                        <div class="timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>استلام الطلب</h5>
+                                    <p>تم استلام الطلب وتسجيله في النظام</p>
+                                    <div class="timeline-meta">
+                                        <span class="employee">سارة خالد (E-1234)</span>
+                                        <span class="time">15 مايو 2025، 09:30 صباحًا</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>مراجعة أولية</h5>
+                                    <p>تمت مراجعة الطلب والموافقة عليه</p>
+                                    <div class="timeline-meta">
+                                        <span class="employee">فهد محمد (E-5678)</span>
+                                        <span class="time">15 مايو 2025، 10:30 صباحًا</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>تحويل للقسم المختص</h5>
+                                    <p>تم تحويل الطلب إلى قسم البيانات والحسابات</p>
+                                    <div class="timeline-meta">
+                                        <span class="employee">فهد محمد (E-5678)</span>
+                                        <span class="time">15 مايو 2025، 11:00 صباحًا</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>بدء المعالجة</h5>
+                                    <p>جاري العمل على تحديث البيانات</p>
+                                    <div class="timeline-meta">
+                                        <span class="employee">نورة علي (E-9012)</span>
+                                        <span class="time">16 مايو 2025، 11:45 صباحًا</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item pending">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>مراجعة نهائية</h5>
+                                    <p>في انتظار المراجعة النهائية</p>
+                                    <div class="timeline-meta">
+                                        <span class="employee">-</span>
+                                        <span class="time">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item pending">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-flag-checkered"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>إغلاق الطلب</h5>
+                                    <p>في انتظار إغلاق الطلب</p>
+                                    <div class="timeline-meta">
+                                        <span class="employee">-</span>
+                                        <span class="time">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="request-actions">
+                        <button class="btn btn-primary" id="add-comment-btn">
+                            <i class="fas fa-comment"></i> إضافة تعليق
+                        </button>
+                        <button class="btn btn-outline" id="download-details-btn">
+                            <i class="fas fa-download"></i> تحميل التفاصيل
+                        </button>
+                        <button class="btn btn-outline" id="print-details-btn">
+                            <i class="fas fa-print"></i> طباعة
+                        </button>
+                    </div>
+                    
+                    <div class="comments-section">
+                        <h4>التعليقات</h4>
+                        <div class="comments-list">
+                            <div class="comment-item">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة المستخدم" class="avatar-small">
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <h5>فهد محمد</h5>
+                                        <span class="time">15 مايو 2025، 10:45 صباحًا</span>
+                                    </div>
+                                    <p>تمت الموافقة على الطلب وتحويله للقسم المختص للمعالجة.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="comment-item">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة المستخدم" class="avatar-small">
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <h5>نورة علي</h5>
+                                        <span class="time">16 مايو 2025، 11:45 صباحًا</span>
+                                    </div>
+                                    <p>بدأت العمل على تحديث البيانات، يرجى التأكد من رقم الهاتف الجديد الذي تريد تسجيله.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="comment-item user-comment">
+                                <img src="../assets/images/user-avatar.svg" alt="صورة المستخدم" class="avatar-small">
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <h5>محمد أحمد (أنت)</h5>
+                                        <span class="time">16 مايو 2025، 12:30 مساءً</span>
+                                    </div>
+                                    <p>رقم الهاتف الجديد هو: 0512345678</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="add-comment-form">
+                            <form id="comment-form">
+                                <div class="form-group">
+                                    <textarea id="comment-text" name="comment-text" rows="3" placeholder="اكتب تعليقك هنا..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">إرسال التعليق</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة حجز موعد جديد -->
+    <div class="modal" id="book-appointment-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>حجز موعد جديد</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="book-appointment-form">
+                    <div class="form-group">
+                        <label for="appointment-type">نوع الموعد</label>
+                        <select id="appointment-type" name="appointment-type" required>
+                            <option value="">اختر نوع الموعد</option>
+                            <option value="request-follow-up">متابعة طلب</option>
+                            <option value="new-request">تقديم طلب جديد</option>
+                            <option value="consultation">استشارة</option>
+                            <option value="document-submission">تقديم مستندات</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appointment-department">القسم</label>
+                        <select id="appointment-department" name="appointment-department" required>
+                            <option value="">اختر القسم</option>
+                            <option value="customer-service">خدمة العملاء</option>
+                            <option value="technical-support">الدعم الفني</option>
+                            <option value="complaints">قسم الشكاوى</option>
+                            <option value="documents">قسم المستندات</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appointment-date">التاريخ</label>
+                        <input type="date" id="appointment-date" name="appointment-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appointment-time">الوقت</label>
+                        <select id="appointment-time" name="appointment-time" required>
+                            <option value="">اختر الوقت</option>
+                            <option value="09:00">09:00 صباحًا</option>
+                            <option value="09:30">09:30 صباحًا</option>
+                            <option value="10:00">10:00 صباحًا</option>
+                            <option value="10:30">10:30 صباحًا</option>
+                            <option value="11:00">11:00 صباحًا</option>
+                            <option value="11:30">11:30 صباحًا</option>
+                            <option value="12:00">12:00 ظهرًا</option>
+                            <option value="12:30">12:30 ظهرًا</option>
+                            <option value="13:00">01:00 مساءً</option>
+                            <option value="13:30">01:30 مساءً</option>
+                            <option value="14:00">02:00 مساءً</option>
+                            <option value="14:30">02:30 مساءً</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appointment-notes">ملاحظات (اختياري)</label>
+                        <textarea id="appointment-notes" name="appointment-notes" rows="3" placeholder="أي معلومات إضافية تريد إضافتها"></textarea>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary">تأكيد الحجز</button>
+                        <button type="reset" class="btn btn-outline">إلغاء</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- جافا سكريبت -->
+    <script src="../js/main.js"></script>
+    <script src="../js/tracking.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // التبديل بين أقسام لوحة التحكم
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            const dashboardSections = document.querySelectorAll('.dashboard-section');
+            
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // إزالة الفئة النشطة من جميع الروابط والأقسام
+                    sidebarLinks.forEach(link => link.parentElement.classList.remove('active'));
+                    dashboardSections.forEach(section => section.classList.remove('active'));
+                    
+                    // إضافة الفئة النشطة للرابط والقسم المستهدف
+                    this.parentElement.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+            
+            // التبديل بين أقسام الملف الشخصي
+            const profileMenuItems = document.querySelectorAll('.profile-menu-item');
+            const profileSections = document.querySelectorAll('.profile-section');
+            
+            profileMenuItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // إزالة الفئة النشطة من جميع العناصر والأقسام
+                    profileMenuItems.forEach(item => item.classList.remove('active'));
+                    profileSections.forEach(section => section.classList.remove('active'));
+                    
+                    // إضافة الفئة النشطة للعنصر والقسم المستهدف
+                    this.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+            
+            // فتح نافذة تفاصيل الطلب
+            const viewRequestButtons = document.querySelectorAll('.view-request');
+            const requestDetailsModal = document.getElementById('request-details-modal');
+            
+            viewRequestButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const requestId = this.getAttribute('data-id');
+                    document.getElementById('request-id').textContent = requestId;
+                    
+                    // في التطبيق الحقيقي، يتم تحميل بيانات الطلب بناءً على المعرف
+                    
+                    // فتح النافذة المنبثقة
+                    requestDetailsModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // فتح نافذة حجز موعد جديد
+            const bookAppointmentBtn = document.getElementById('book-appointment-btn');
+            const bookAppointmentModal = document.getElementById('book-appointment-modal');
+            
+            if (bookAppointmentBtn && bookAppointmentModal) {
+                bookAppointmentBtn.addEventListener('click', function() {
+                    bookAppointmentModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            // إظهار/إخفاء كلمة المرور
+            const togglePasswordBtns = document.querySelectorAll('.toggle-password');
+            
+            togglePasswordBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const input = this.previousElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        icon.classList.remove('fa-eye');
+                        icon.classList.add('fa-eye-slash');
+                    } else {
+                        input.type = 'password';
+                        icon.classList.remove('fa-eye-slash');
+                        icon.classList.add('fa-eye');
+                    }
+                });
+            });
+            
+            // معالجة النماذج
+            const forms = document.querySelectorAll('form');
+            
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // محاكاة إرسال النموذج
+                    alert('تم إرسال النموذج بنجاح!');
+                    
+                    // إغلاق النافذة المنبثقة إذا كان النموذج داخل نافذة منبثقة
+                    const modal = this.closest('.modal');
+                    if (modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
