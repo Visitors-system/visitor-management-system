@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     animateOnScroll(); // تنفيذ مرة واحدة عند التحميل
     window.addEventListener('scroll', animateOnScroll);
     
-    // تحديث عداد الزوار وأوقات الانتظار (محاكاة)
+    // تحديث عداد المراجعين وأوقات الانتظار (محاكاة)
     const updateQueueStatus = function() {
         const waitTimeElement = document.getElementById('wait-time');
         const currentNumberElement = document.getElementById('current-number');
@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
     animateOnScroll(); // تنفيذ مرة واحدة عند التحميل
     window.addEventListener('scroll', animateOnScroll);
     
-    // تحديث عداد الزوار وأوقات الانتظار (محاكاة)
+    // تحديث عداد المراجعين وأوقات الانتظار (محاكاة)
     const updateQueueStatus = function() {
         const waitTimeElement = document.getElementById('wait-time');
         const currentNumberElement = document.getElementById('current-number');
