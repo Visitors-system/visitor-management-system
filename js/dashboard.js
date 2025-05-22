@@ -53,7 +53,7 @@ const dashboardData = {
         upcomingRequests: [
             {
                 id: 'REQ-120589',
-                visitorName: 'محمد أحمد',
+                visitorName: 'حصة البريكية',
                 subject: 'تحديث بيانات حساب',
                 visitorPhone: '0501234567',
                 deadline: new Date(2025, 4, 22, 16, 0),
@@ -82,7 +82,7 @@ const dashboardData = {
         appointments: [
             {
                 id: 'APPT-123456',
-                visitorName: 'محمد أحمد',
+                visitorName: 'حصة البريكية',
                 title: 'موعد مراجعة معاملة',
                 requestId: 'REQ-120589',
                 date: new Date(2025, 4, 25, 10, 30),
