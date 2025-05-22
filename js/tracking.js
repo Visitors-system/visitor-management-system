@@ -18,13 +18,13 @@ const requestsData = [
         department: 'خدمة العملاء',
         assignedTo: [
             { employeeId: 'E-1234', name: 'سارة خالد', role: 'مستقبل الطلب', status: 'مكتمل', startTime: new Date(2025, 4, 15, 9, 30), endTime: new Date(2025, 4, 15, 9, 45) },
-            { employeeId: 'E-5678', name: 'فهد محمد', role: 'مدير القسم', status: 'مكتمل', startTime: new Date(2025, 4, 15, 10, 0), endTime: new Date(2025, 4, 15, 10, 30) },
+            { employeeId: 'E-5678', name: 'طلال العدوي', role: 'مدير القسم', status: 'مكتمل', startTime: new Date(2025, 4, 15, 10, 0), endTime: new Date(2025, 4, 15, 10, 30) },
             { employeeId: 'E-9012', name: 'نورة علي', role: 'متخصص تحديث البيانات', status: 'قيد التنفيذ', startTime: new Date(2025, 4, 16, 11, 45), endTime: null }
         ],
         timeline: [
             { stage: 'استلام الطلب', status: 'مكتمل', time: new Date(2025, 4, 15, 9, 30), employeeId: 'E-1234', employeeName: 'سارة خالد', notes: 'تم استلام الطلب وتسجيله في النظام' },
-            { stage: 'مراجعة أولية', status: 'مكتمل', time: new Date(2025, 4, 15, 10, 30), employeeId: 'E-5678', employeeName: 'فهد محمد', notes: 'تمت مراجعة الطلب والموافقة عليه' },
-            { stage: 'تحويل للقسم المختص', status: 'مكتمل', time: new Date(2025, 4, 15, 11, 0), employeeId: 'E-5678', employeeName: 'فهد محمد', notes: 'تم تحويل الطلب إلى قسم البيانات والحسابات' },
+            { stage: 'مراجعة أولية', status: 'مكتمل', time: new Date(2025, 4, 15, 10, 30), employeeId: 'E-5678', employeeName: 'طلال العدوي', notes: 'تمت مراجعة الطلب والموافقة عليه' },
+            { stage: 'تحويل للقسم المختص', status: 'مكتمل', time: new Date(2025, 4, 15, 11, 0), employeeId: 'E-5678', employeeName: 'طلال العدوي', notes: 'تم تحويل الطلب إلى قسم البيانات والحسابات' },
             { stage: 'بدء المعالجة', status: 'مكتمل', time: new Date(2025, 4, 16, 11, 45), employeeId: 'E-9012', employeeName: 'نورة علي', notes: 'جاري العمل على تحديث البيانات' },
             { stage: 'مراجعة نهائية', status: 'منتظر', time: null, employeeId: null, employeeName: null, notes: '' },
             { stage: 'إغلاق الطلب', status: 'منتظر', time: null, employeeId: null, employeeName: null, notes: '' }
