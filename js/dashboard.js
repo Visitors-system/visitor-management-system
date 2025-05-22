@@ -38,7 +38,7 @@ const dashboardData = {
                 title: 'موعد مراجعة معاملة',
                 date: new Date(2025, 4, 25, 10, 30),
                 location: 'قسم خدمة العملاء - الطابق الثاني',
-                staff: 'سارة خالد',
+                staff: 'أصيلة البريكية',
                 status: 'مؤكد'
             }
         ]
@@ -119,7 +119,7 @@ const dashboardData = {
         departmentPerformance: [
             {
                 employeeId: 'E-1234',
-                name: 'سارة خالد',
+                name: 'أصيلة البريكية',
                 position: 'أخصائي خدمة العملاء',
                 completedRequests: 18,
                 satisfactionRate: 4.8,
